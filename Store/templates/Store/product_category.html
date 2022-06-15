@@ -1,0 +1,80 @@
+{%extends './base.html'%}
+    {%block content%}
+
+
+    <!-- Start Top Search -->
+    <div class="top-search">
+        <div class="container">
+            <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-search"></i></span>
+                <input type="text" class="form-control" placeholder="Search">
+                <span class="input-group-addon close-search"><i class="fa fa-times"></i></span>
+            </div>
+        </div>
+    </div>
+    <!-- End Top Search -->
+
+    <!-- Start All Title Box -->
+    <div class="all-title-box">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    {% comment %} <h2>Services</h2> {% endcomment %}
+                    <ul class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="{%url 'home'%}">Home</a></li>
+                        <li class="breadcrumb-item active"><a href="#">Categories</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End All Title Box -->
+
+    <!-- Start Gallery  -->
+    <div class="products-box">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="title-all text-center">
+                        <h1>{{category_name.name}}</h1>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet lacus enim.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row special-list">
+                                        
+                {%for item in products%}
+                    <div class="col-lg-3 col-md-6 special-grid bulbs">
+                        <div class="products-single fix">
+                            <div class="box-img-hover">
+                                    
+                                <img src="{{item.product_image.url}}" class="img-fluid" alt="Image">
+                                <div class="mask-icon">
+                                    <ul>
+                                        <li><a href="{%url 'shop'%}" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
+                                        <li><a href="{%url 'wishlist'%}" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
+                                    </ul>
+                                    <a class="cart" href="{%url 'shop' %}"><button class= 'btn btn-outline-secondary add-btn update-cart'>Add to Cart</button></a>
+                                </div>
+                                {% comment %} <button><a href= "#"><span>{{item.selling_price| stringformat:'d'}}</span></a></button> {% endcomment %}
+                            </div>
+                            <div class="why-text">
+                                <h4>{{item.name}}</h4>
+                                <h5>Ksh.{{item.selling_price| stringformat:'d'}}</h5>
+                            </div>
+                        </div>
+                    </div>
+                {%endfor%}
+            </div>
+        </div>
+    </div>
+    <!-- End Gallery  -->
+
+    
+    
+    
+    {% comment %} <script src="js/owl.carousel.min.js"></script>
+    <script src="js/baguetteBox.min.js"></script>
+    <script src="js/form-validator.min.js"></script>
+    <script src="js/contact-form-script.js"></script> {% endcomment %}
+    {%endblock content%}

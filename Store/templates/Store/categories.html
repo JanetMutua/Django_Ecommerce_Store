@@ -1,0 +1,116 @@
+{%extends './base.html'%}
+    {%block content%}
+
+
+    <!-- Start Top Search -->
+    <div class="top-search">
+        <div class="container">
+            <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-search"></i></span>
+                <input type="text" class="form-control" placeholder="Search">
+                <span class="input-group-addon close-search"><i class="fa fa-times"></i></span>
+            </div>
+        </div>
+    </div>
+    <!-- End Top Search -->
+
+    <!-- Start All Title Box -->
+    <div class="all-title-box">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2>Category</h2>
+                    <ul class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="{%url 'home'%}">Home</a></li>
+                        <li class="breadcrumb-item active">Categories</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End All Title Box -->
+
+    <!-- Start Gallery  -->
+    <div class="products-box">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="title-all text-center">
+                        <h1>Shop by Category</h1>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet lacus enim.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="special-menu text-center">
+                        <div class="button-group filter-button-group">
+
+                            <a href="{%url 'category'%}"><button class="active" data-filter="*">Shop Type</button></a>
+                            
+                            <a href="{%url 'shopsize'%}"><button data-filter=".bulbs">Shop by Size</button></a>
+                            
+                            <a href="{%url 'newarrival'%}"><button data-filter=".fruits">New Arrivals</button></a>
+                            <a href="{%url 'trending'%}"><button data-filter=".podded-vegetables">Trending</button></a>
+                            <a href="{%url 'clearance'%}"><button data-filter=".root-and-tuberous">Clearance sales</button></a>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {% comment %} <div class="row special-list"> {% endcomment %}
+
+            <div class="container">
+                <div class="row">
+                    {%for item in category%}
+                    <div class="col-lg-6 col-md-6 col-sm-12">
+                        <div class="offer-box-products">
+                            <div class="box-img-hover">
+                                <img class="img-fluid" src="{{item.image.url}}" alt="" />
+                                <div class="mask-icon">
+                                    <a class="cart" href="{% url 'product_category' item.slug%}">{{item.name}}</a>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                    </div>
+                    <br>
+                    {%endfor%}
+                    <br>
+                </div>
+                <br>
+            </div>
+                
+                    {% comment %} {%for item in category%}
+                        <div class="col-lg-3 col-md-6 special-grid bulbs">
+                            <div class="products-single fix">
+                                <a href="{% url 'product_category' item.slug%}">
+                                    <div class="box-img-hover">
+                                        <img src="{{item.image.url}}" class="img-fluid" alt="Image">
+                                        <div class="mask-icon">
+                                            <ul>
+                                                <li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
+                                                <li><a href="{%url 'wishlist'%}" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
+                                            </ul>
+                                            <a class="cart" href="cart.html">{{item.name}}</a>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    {%endfor%}
+                 {% endcomment %}
+            {% comment %} </div> {% endcomment %}
+        </div>
+    </div>
+    <!-- End Gallery  -->
+
+    
+    
+    
+    {% comment %} <script src="js/owl.carousel.min.js"></script>
+    <script src="js/baguetteBox.min.js"></script>
+    <script src="js/form-validator.min.js"></script>
+    <script src="js/contact-form-script.js"></script> {% endcomment %}
+    {%endblock content%}
