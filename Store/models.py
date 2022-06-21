@@ -37,11 +37,11 @@ class Category(models.Model):
 
 
     
-class Size(models.Model):
+class Size_categorie(models.Model):
     slug = models.CharField(max_length=150, null=False, blank=False)
     size_type = models.CharField(max_length=150, null=False, blank=False)
     image= models.ImageField(upload_to= get_file_path, height_field=None, width_field=None, max_length = None)
-    description = models.TextField(max_length=500, name=False, blank=False)
+    description = models.TextField(max_length=500, name=False, blank=True)
     status = models.BooleanField(default=False, help_text='0=default, 1=Hidden')
     created_at = models.DateTimeField(auto_now_add=True)
 
@@ -49,16 +49,28 @@ class Size(models.Model):
     def __str__(self):
         return self.size_type
 
+class Size(models.Model):
+    size_no = models.IntegerField(null=False, blank=False)
+    description = models.CharField(max_length=30, null=False, blank=False)
+    status = models.BooleanField(default=False, help_text='0=default, 1=Hidden')
+    size_category = models.ForeignKey(Size_categorie, on_delete=models.DO_NOTHING)
+
+
+    def __str__(self):
+        return self.description
+
+
+
 
 
 class Product(models.Model):
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
-    size = models.ForeignKey(Size, on_delete=models.DO_NOTHING)
+    size = models.ForeignKey(Size, on_delete=models.DO_NOTHING, null=True, blank=True)
     name = models.CharField(max_length=150, null=False, blank=False)
     product_image= models.ImageField(upload_to= get_file_path, height_field=None, width_field=None, max_length = None)
     brief_description = models.CharField(max_length=250, null=False, blank=False)
     quantity = models.IntegerField(null=False, blank=False)
-    description = models.TextField(max_length=500, name=False, blank=False)
+    description = models.TextField(max_length=500, name=False, blank=True)
     original_price = models.FloatField(null=False, blank=False)
     selling_price = models.FloatField(null=False, blank=False)
     status = models.BooleanField(default=False, help_text='0=default, 1=Hidden')
@@ -66,9 +78,9 @@ class Product(models.Model):
     clearance_sale = models.BooleanField(default=False, help_text='0=default, 1=Clearance')
     new_arrival = models.BooleanField(default=False, help_text='0=default, 1=New Arrival')
     viewed_on_homepage = models.BooleanField(default=False, help_text='0=default, 1=Homepage')
-    meta_title = models.CharField(max_length=150, null=False, blank=True)
-    meta_keywords = models.CharField(max_length=150, null=False, blank=False)
-    meta_description = models.TextField(max_length=500, null=False, blank=False)
+    meta_title = models.CharField(max_length=150, null=True, blank=True)
+    meta_keywords = models.CharField(max_length=150, null=True, blank=True)
+    meta_description = models.TextField(max_length=500, null=True, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
 
 
@@ -118,3 +130,6 @@ class Wishlist(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)
+
+
+
