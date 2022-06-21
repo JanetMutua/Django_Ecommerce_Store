@@ -18,7 +18,7 @@ from django.urls import path
 from Store.views import *
 from django.conf import settings
 from django.conf.urls.static import static
-from Store.controller import authview, cart, wishlist
+from Store.controller import authview, cart, wishlist, quicklinks
 
 
 urlpatterns = [
@@ -79,6 +79,13 @@ urlpatterns = [
     path('clearancesales/', Clearance, name='clearance'),
     path('newarrivals/', NewArrival, name='newarrival'),
 
+
+    #--------------------------------footer quicklinks---------------------------------------------
+
+    path('shipping-policy/', quicklinks.Shipping, name="shipping"),
+    path('returns-policy/', quicklinks.Return, name="returns"),
+    path('privacy-policy/',quicklinks.PrivacyPolicy, name="privacy"),
+    path('terms&conditions/',quicklinks.TermsAndConditions, name="terms"),
 
 
 

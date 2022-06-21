@@ -1,539 +1,501 @@
 {%extends './base.html'%}
-    {%block content%}
-    {%load static%}
-
-    <!-- Start Slider -->
-    <div id="slides-shop" class="cover-slides">
-        <ul class="slides-container">
-            <li class="text-center">
-                <img src="{% static 'Store/images/banner-01.jpg'%}" alt="">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <h1 class="m-b-20"><strong>SIMPLY ELEGANT <br></strong></h1>
-                            <p class="m-b-40">With a wide range of collections,<br>You will be spoilt for choice.<br>Get amazing offers today!</p>
-                            <p><a class="btn hvr-hover" href="{%url 'shop'%}">Shop</a></p>
-                        </div>
+{%block content%}
+{%load static%}
+<!-- Start Slider -->
+<div id="slides-shop" class="cover-slides">
+    <ul class="slides-container">
+        <li class="text-center">
+            <img src="{% static 'Store/images/banner-01.jpg'%}" alt="">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1 class="m-b-20"><strong>SIMPLY ELEGANT <br></strong></h1>
+                        <p class="m-b-40">With a wide range of collections,<br>You will be spoilt for choice.<br>Get amazing offers today!</p>
+                        <p><a class="btn hvr-hover" href="{%url 'shop'%}">Shop</a></p>
                     </div>
                 </div>
-            </li>
-            <li class="text-center">
-                <img src="{% static 'Store/images/banner-02.jpg'%}" alt="">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <h1 class="m-b-20"><strong>SIMPLY ELEGANT <br> </strong></h1>
-                            <p class="m-b-40">With a wide range of collections,<br>You will be spoilt for choice.<br>Get amazing offers today!</p>
-                            <p><a class="btn hvr-hover" href="{%url 'shop'%}">Shop</a></p>
-                        </div>
-                    </div>
-                </div>
-            </li>
-            <li class="text-center">
-                <img src="{% static 'Store/images/banner-03.jpg'%}" alt="">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <h1 class="m-b-20"><strong>SIMPLY ELEGANT<br></strong></h1>
-                            <p class="m-b-40">With a wide range of collections,<br>You will be spoilt for choice.<br>Get amazing offers today!</p>
-                            <p><a class="btn hvr-hover" href="{%url 'shop'%}">Shop</a></p>
-                        </div>
-                    </div>
-                </div>
-            </li>
-        </ul>
-    </div>
-    <!-- End Slider -->
-
-    <div class="categories-shop">
-        <div class="container">
-            <div class="products-box">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-12">
-        
-                            <!-- to be reused -->
-                            <div class="special-menu text-center">
-                                <div class="button-group filter-button-group">
-                                    <button class="active" data-filter="*">All</button>
-                                    <button data-filter=".top-featured">Trending</button>
-                                    <button data-filter=".best-seller">Best seller</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Featured slider -->
-
-                    <div class="row my-5">
-                        <div class="col-lg-12">
-                            <div class="title-all text-center">
-                                <h1>Top Trending Today</h1>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet lacus enim.</p>
-                            </div>
-                            <div class="featured-products-box owl-carousel owl-theme">
-                                <div class="item">
-                                    <div class="products-single fix">
-                                        <div class="box-img-hover">
-                                            <img src="{% static 'Store/images/img-pro-02.jpg'%}" class="img-fluid" alt="Image">
-                                            <div class="mask-icon">
-                                                <ul>
-                                                    <li><a href="{%url 'shop'%}" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
-                                            
-                                                    <li><a href="{%url 'wishlist'%}" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
-                                                </ul>
-                                                <a class="cart" href="{%url 'mycart'%}">Add to Cart</a>
-                                            </div>
-                                        </div>
-                                        <div class="why-text">
-                                            <h4>Lorem ipsum dolor sit amet</h4>
-                                            <h5> Ksh 2500</h5>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <div class="products-single fix">
-                                        <div class="box-img-hover">
-                                            <img src="{% static 'Store/images/img-pro-04.jpg'%}" class="img-fluid" alt="Image">
-                                            <div class="mask-icon">
-                                                <ul>
-                                                    <li><a href="{%url 'shop'%}" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
-                                            
-                                                    <li><a href="{%url 'wishlist'%}" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
-                                                </ul>
-                                                <a class="cart" href="{%url 'mycart'%}">Add to Cart</a>
-                                            </div>
-                                        </div>
-                                        <div class="why-text">
-                                            <h4>Lorem ipsum dolor sit amet</h4>
-                                            <h5> Ksh 4500</h5>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <div class="products-single fix">
-                                        <div class="box-img-hover">
-                                            <img src="{% static 'Store/images/img-pro-01.jpg'%}" class="img-fluid" alt="Image">
-                                            <div class="mask-icon">
-                                                <ul>
-                                                    <li><a href="{%url 'shop'%}" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
-                                            
-                                                    <li><a href="{%url 'wishlist'%}" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
-                                                </ul>
-                                                <a class="cart" href="cart.html">Add to Cart</a>
-                                            </div>
-                                        </div>
-                                        <div class="why-text">
-                                            <h4>Lorem ipsum dolor sit amet</h4>
-                                            <h5> Ksh 3080</h5>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <div class="products-single fix">
-                                        <div class="box-img-hover">
-                                            <img src="{% static 'Store/images/img-pro-03.jpg'%}" class="img-fluid" alt="Image">
-                                            <div class="mask-icon">
-                                                <ul>
-                                                    <li><a href="{%url 'shop'%}" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
-                                            
-                                                    <li><a href="{%url 'wishlist'%}" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
-                                                </ul>
-                                                <a class="cart" href="cart.html">Add to Cart</a>
-                                            </div>
-                                        </div>
-                                        <div class="why-text">
-                                            <h4>Lorem ipsum dolor sit amet</h4>
-                                            <h5> Ksh 6000</h5>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <div class="products-single fix">
-                                        <div class="box-img-hover">
-                                            <img src="{% static 'Store/images/img-pro-04.jpg'%}" class="img-fluid" alt="Image">
-                                            <div class="mask-icon">
-                                                <ul>
-                                                    <li><a href="{%url 'shop'%}" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
-                                            
-                                                    <li><a href="{%url 'wishlist'%}" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
-                                                </ul>
-                                                <a class="cart" href="cart.html">Add to Cart</a>
-                                            </div>
-                                        </div>
-                                        <div class="why-text">
-                                            <h4>Lorem ipsum dolor sit amet</h4>
-                                            <h5> Ksh 6000</h5>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <div class="products-single fix">
-                                        <div class="box-img-hover">
-                                            <img src="{% static 'Store/images/img-pro-03.jpg'%}" class="img-fluid" alt="Image">
-                                            <div class="mask-icon">
-                                                <ul>
-                                                    <li><a href="{%url 'shop'%}" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
-                                            
-                                                    <li><a href="{%url 'wishlist'%}" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
-                                                </ul>
-                                                <a class="cart" href="cart.html">Add to Cart</a>
-                                            </div>
-                                        </div>
-                                        <div class="why-text">
-                                            <h4>Lorem ipsum dolor sit amet</h4>
-                                            <h5> Ksh 4000</h5>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <div class="products-single fix">
-                                        <div class="box-img-hover">
-                                            <img src="{% static 'Store/images/img-pro-02.jpg'%}" class="img-fluid" alt="Image">
-                                            <div class="mask-icon">
-                                                <ul>
-                                                    <li><a href="{%url 'shop'%}" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
-                                            
-                                                    <li><a href="{%url 'wishlist'%}" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
-                                                </ul>
-                                                <a class="cart" href="cart.html">Add to Cart</a>
-                                            </div>
-                                        </div>
-                                        <div class="why-text">
-                                            <h4>Lorem ipsum dolor sit amet</h4>
-                                            <h5> Ksh 1200</h5>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <div class="products-single fix">
-                                        <div class="box-img-hover">
-                                            <img src="{% static 'Store/images/img-pro-01.jpg'%}" class="img-fluid" alt="Image">
-                                            <div class="mask-icon">
-                                                <ul>
-                                                    <li><a href="{%url 'shop'%}" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
-                                                    
-                                                    <li><a href="{%url 'wishlist'%}" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
-                                                </ul>
-                                                <a class="cart" href="cart.html">Add to Cart</a>
-                                            </div>
-                                        </div>
-                                        <div class="why-text">
-                                            <h4>Lorem ipsum dolor sit amet</h4>
-                                            <h5> Ksh 6000</h5>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- end of products container -->
-
-                
-                
             </div>
-            
-            
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-lg-12">
-            <div class="title-all text-center">
-                <hr>
-                <h1>Check Out Our New Arrivals</h1>
-                <hr>
+        </li>
+        <li class="text-center">
+            <img src="{% static 'Store/images/banner-02.jpg'%}" alt="">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1 class="m-b-20"><strong>SIMPLY ELEGANT <br> </strong></h1>
+                        <p class="m-b-40">With a wide range of collections,<br>You will be spoilt for choice.<br>Get amazing offers today!</p>
+                        <p><a class="btn hvr-hover" href="{%url 'shop'%}">Shop</a></p>
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-lg-12">
-            <div class="title-all text-center">
-                <h2>Amazing offers available</h2>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Suscipit, totam excepturi!</p>
+        </li>
+        <li class="text-center">
+            <img src="{% static 'Store/images/banner-03.jpg'%}" alt="">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1 class="m-b-20"><strong>SIMPLY ELEGANT<br></strong></h1>
+                        <p class="m-b-40">With a wide range of collections,<br>You will be spoilt for choice.<br>Get amazing offers today!</p>
+                        <p><a class="btn hvr-hover" href="{%url 'shop'%}">Shop</a></p>
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
+        </li>
+    </ul>
+</div>
+<!-- End Slider -->
 
-    <!-- Start Products  -->
-    <div class="products-box">
-        <div class="container">
-
-           
+<div class="categories-shop">
+    <div class="container">
+        <div class="products-box">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
     
-
-            <div class="row special-list">
-                <div class="col-lg-3 col-md-6 special-grid best-seller">
-                    <div class="products-single fix">
-                        <div class="box-img-hover">
-                            <div class="type-lb">
-                                <p class="sale">Sale</p>
+                        <!-- to be reused -->
+                        <div class="special-menu text-center">
+                            <div class="button-group filter-button-group">
+                                <hr>
+                                <button class="active" data-filter="*">All</button>
+                                <button data-filter=".top-featured">Trending</button>
+                                <button data-filter=".best-seller">New Arrivals</button>
                             </div>
-                            <img src="{% static 'Store/images/img-pro-01.jpg'%}" class="img-fluid" alt="Image">
-                            <div class="mask-icon">
-                                <ul>
-                                    <li><a href="{%url 'shop'%}" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
-                                    <li><a href="{%url 'wishlist'%}" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
-                                </ul>
-                                <a class="cart" href="{%url 'mycart'%}">Add to Cart</a>
-                            </div>
-                        </div>
-                        <div class="why-text">
-                            <h4>Lorem ipsum dolor sit amet</h4>
-                            <h5> Ksh. 4500</h5>
+                            <br>
                         </div>
                     </div>
+                </div>
+                <div class="title-all text-center">
+                    
+                    <h1>Top Trending Today</h1>
+                    <h2>Amazing offers available</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet lacus enim.</p>
+                    <hr>
                 </div>
 
-                <div class="col-lg-3 col-md-6 special-grid top-featured">
-                    <div class="products-single fix">
-                        <div class="box-img-hover">
-                            <div class="type-lb">
-                                <p class="new">New</p>
+                <!--------------------------------Trending slider ------------------------------------------------->
+
+                <div class="row my-5">
+                    <div class="col-lg-12">
+                                                    
+                        <div class="featured-products-box owl-carousel owl-theme">
+                            <div class="item">
+                                <div class="products-single fix">
+                                    <div class="box-img-hover">
+                                        <img src="{% static 'Store/images/img-pro-02.jpg'%}" class="img-fluid" alt="Image">
+                                        <div class="mask-icon">
+                                            <ul>
+                                                <li><a href="{%url 'shop'%}" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
+                                                <li><a href="{%url 'wishlist'%}" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
+                                            </ul>
+                                            <a class="cart" href="{%url 'mycart'%}">Add to Cart</a>
+                                        </div>
+                                    </div>
+                                    <div class="why-text">
+                                        <h4>Lorem ipsum dolor sit amet</h4>
+                                        <h5> Ksh 2500</h5>
+                                    </div>
+                                </div>
                             </div>
-                            <img src="{% static 'Store/images/img-pro-02.jpg'%}" class="img-fluid" alt="Image">
-                            <div class="mask-icon">
-                                <ul>
-                                    <li><a href="{%url 'shop'%}" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
-                                    <li><a href="{%url 'wishlist'%}" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
-                                </ul>
-                                <a class="cart" href="{%url 'mycart'%}">Add to Cart</a>
+                            <div class="item">
+                                <div class="products-single fix">
+                                    <div class="box-img-hover">
+                                        <img src="{% static 'Store/images/no01.png'%}" class="img-fluid" alt="Image">
+                                        <div class="mask-icon">
+                                            <ul>
+                                                <li><a href="{%url 'shop'%}" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
+                                                <li><a href="{%url 'wishlist'%}" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
+                                            </ul>
+                                            <a class="cart" href="{%url 'mycart'%}">Add to Cart</a>
+                                        </div>
+                                    </div>
+                                    <div class="why-text">
+                                        <h4>Lorem ipsum dolor sit amet</h4>
+                                        <h5> Ksh 4500</h5>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="why-text">
-                            <h4>Lorem ipsum dolor sit amet</h4>
-                            <h5> Ksh. 3400</h5>
+                            <div class="item">
+                                <div class="products-single fix">
+                                    <div class="box-img-hover">
+                                        <img src="{% static 'Store/images/img-pro-01.jpg'%}" class="img-fluid" alt="Image">
+                                        <div class="mask-icon">
+                                            <ul>
+                                                <li><a href="{%url 'shop'%}" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
+                                                <li><a href="{%url 'wishlist'%}" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
+                                            </ul>
+                                            <a class="cart" href="{%url 'mycart'%}">Add to Cart</a>
+                                        </div>
+                                    </div>
+                                    <div class="why-text">
+                                        <h4>Lorem ipsum dolor sit amet</h4>
+                                        <h5> Ksh 3080</h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="products-single fix">
+                                    <div class="box-img-hover">
+                                        <img src="{% static 'Store/images/no02.png'%}" class="img-fluid" alt="Image">
+                                        <div class="mask-icon">
+                                            <ul>
+                                                <li><a href="{%url 'shop'%}" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
+                                                <li><a href="{%url 'wishlist'%}" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
+                                            </ul>
+                                            <a class="cart" href="{%url 'mycart'%}">Add to Cart</a>
+                                        </div>
+                                    </div>
+                                    <div class="why-text">
+                                        <h4>Lorem ipsum dolor sit amet</h4>
+                                        <h5> Ksh 6000</h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="products-single fix">
+                                    <div class="box-img-hover">
+                                        <img src="{% static 'Store/images/no01.png'%}" class="img-fluid" alt="Image">
+                                        <div class="mask-icon">
+                                            <ul>
+                                                <li><a href="{%url 'shop'%}" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
+                                                <li><a href="{%url 'wishlist'%}" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
+                                            </ul>
+                                            <a class="cart" href="{%url 'mycart'%}">Add to Cart</a>
+                                        </div>
+                                    </div>
+                                    <div class="why-text">
+                                        <h4>Lorem ipsum dolor sit amet</h4>
+                                        <h5> Ksh 6000</h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="products-single fix">
+                                    <div class="box-img-hover">
+                                        <img src="{% static 'Store/images/no02.png'%}" class="img-fluid" alt="Image">
+                                        <div class="mask-icon">
+                                            <ul>
+                                                <li><a href="{%url 'shop'%}" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
+                                                <li><a href="{%url 'wishlist'%}" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
+                                            </ul>
+                                            <a class="cart" href="{%url 'mycart'%}">Add to Cart</a>
+                                        </div>
+                                    </div>
+                                    <div class="why-text">
+                                        <h4>Lorem ipsum dolor sit amet</h4>
+                                        <h5> Ksh 4000</h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="products-single fix">
+                                    <div class="box-img-hover">
+                                        <img src="{% static 'Store/images/img-pro-02.jpg'%}" class="img-fluid" alt="Image">
+                                        <div class="mask-icon">
+                                            <ul>
+                                                <li><a href="{%url 'shop'%}" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
+                                                <li><a href="{%url 'wishlist'%}" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
+                                            </ul>
+                                            <a class="cart" href="{%url 'mycart'%}">Add to Cart</a>
+                                        </div>
+                                    </div>
+                                    <div class="why-text">
+                                        <h4>Lorem ipsum dolor sit amet</h4>
+                                        <h5> Ksh 1200</h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="products-single fix">
+                                    <div class="box-img-hover">
+                                        <img src="{% static 'Store/images/img-pro-01.jpg'%}" class="img-fluid" alt="Image">
+                                        <div class="mask-icon">
+                                            <ul>
+                                                <li><a href="{%url 'shop'%}" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
+                                                
+                                                <li><a href="{%url 'wishlist'%}" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
+                                            </ul>
+                                            <a class="cart" href="{%url 'mycart'%}">Add to Cart</a>
+                                        </div>
+                                    </div>
+                                    <div class="why-text">
+                                        <h4>Lorem ipsum dolor sit amet</h4>
+                                        <h5> Ksh 6000</h5>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6 special-grid top-featured">
-                    <div class="products-single fix">
-                        <div class="box-img-hover">
-                            <div class="type-lb">
-                                <p class="new">New</p>
-                            </div>
-                            <img src="{% static 'Store/images/img-pro-03.jpg'%}" class="img-fluid" alt="Image">
-                            <div class="mask-icon">
-                                <ul>
-                                    <li><a href="{%url 'shop'%}" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
-                                    <li><a href="{%url 'wishlist'%}" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
-                                </ul>
-                                <a class="cart" href="{%url 'mycart'%}">Add to Cart</a>
-                            </div>
-                        </div>
-                        <div class="why-text">
-                            <h4>Lorem ipsum dolor sit amet</h4>
-                            <h5> Ksh. 4500</h5>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 special-grid top-featured">
-                    <div class="products-single fix">
-                        <div class="box-img-hover">
-                            <div class="type-lb">
-                                <p class="new">New</p>
-                            </div>
-                            <img src="{% static 'Store/images/img-pro-04.jpg'%}" class="img-fluid" alt="Image">
-                            <div class="mask-icon">
-                                <ul>
-                                    <li><a href="{%url 'shop'%}" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
-                                    <li><a href="{%url 'wishlist'%}" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
-                                </ul>
-                                <a class="cart" href="{%url 'mycart'%}">Add to Cart</a>
-                            </div>
-                        </div>
-                        <div class="why-text">
-                            <h4>Lorem ipsum dolor sit amet</h4>
-                            <h5> Ksh. 7000</h5>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 special-grid top-featured">
-                    <div class="products-single fix">
-                        <div class="box-img-hover">
-                            <div class="type-lb">
-                                <p class="new">New</p>
-                            </div>
-                            <img src="{% static 'Store/images/img-pro-03.jpg'%}" class="img-fluid" alt="Image">
-                            <div class="mask-icon">
-                                <ul>
-                                    <li><a href="{%url 'shop'%}" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
-                                    <li><a href="{%url 'wishlist'%}" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
-                                </ul>
-                                <a class="cart" href="{%url 'mycart'%}">Add to Cart</a>
-                            </div>
-                        </div>
-                        <div class="why-text">
-                            <h4>Lorem ipsum dolor sit amet</h4>
-                            <h5> Ksh. 3000</h5>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 special-grid top-featured">
-                    <div class="products-single fix">
-                        <div class="box-img-hover">
-                            <div class="type-lb">
-                                <p class="new">New</p>
-                            </div>
-                            <img src="{% static 'Store/images/img-pro-01.jpg'%}" class="img-fluid" alt="Image">
-                            <div class="mask-icon">
-                                <ul>
-                                    <li><a href="{%url 'shop'%}" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
-                                    <li><a href="{%url 'wishlist'%}" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
-                                </ul>
-                                <a class="cart" href="{%url 'mycart'%}">Add to Cart</a>
-                            </div>
-                        </div>
-                        <div class="why-text">
-                            <h4>Lorem ipsum dolor sit amet</h4>
-                            <h5> Ksh. 2500</h5>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 special-grid top-featured">
-                    <div class="products-single fix">
-                        <div class="box-img-hover">
-                            <div class="type-lb">
-                                <p class="new">New</p>
-                            </div>
-                            <img src="{% static 'Store/images/img-pro-04.jpg'%}" class="img-fluid" alt="Image">
-                            <div class="mask-icon">
-                                <ul>
-                                    <li><a href="{%url 'shop'%}" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
-                                    <li><a href="{%url 'wishlist'%}" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
-                                </ul>
-                                <a class="cart" href="{%url 'mycart'%}">Add to Cart</a>
-                            </div>
-                        </div>
-                        <div class="why-text">
-                            <h4>Lorem ipsum dolor sit amet</h4>
-                            <h5> Ksh. 4000</h5>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 special-grid top-featured">
-                    <div class="products-single fix">
-                        <div class="box-img-hover">
-                            <div class="type-lb">
-                                <p class="new">New</p>
-                            </div>
-                            <img src="{% static 'Store/images/img-pro-04.jpg'%}" class="img-fluid" alt="Image">
-                            <div class="mask-icon">
-                                <ul>
-                                    <li><a href="{%url 'shop'%}" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
-                                    <li><a href="{%url 'wishlist'%}" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
-                                </ul>
-                                <a class="cart" href="{%url 'mycart'%}">Add to Cart</a>
-                            </div>
-                        </div>
-                        <div class="why-text">
-                            <h4>Lorem ipsum dolor sit amet</h4>
-                            <h5> Ksh. 3600</h5>
-                        </div>
-                    </div>
-                </div>
-                
             </div>
         </div>
     </div>
-    <!-- End Products  -->
+                     <!-- Offer Start -->
+    <div class="container-fluid offer pt-5">
 
-    <!-- Size selection  -->
-
-    <div class="box-add-products">
-
-        <!-- add size selection here -->
-
-        <div class="col-lg-12">
-            <div class="title-all text-center">
-                
-                <h1>Our Size Selection</h1>
-                <hr>
-            </div>
-        </div>
-
-        
-
-        <div class="container">
-            <div class="row">
-                {%for item in size%}
-                <div class="col-lg-6 col-md-6 col-sm-12">
-                    <div class="offer-box-products">
-                        <div class="box-img-hover">
-                            <img class="img-fluid" src="{{item.image.url}}" alt="" />
-                            <div class="mask-icon">
-                                <a class="cart" href="#">{{item.size_type}}</a>
-                            </div>
-                        </div>
+        <div class="row px-xl-5">
+            <div class="col-md-6 pb-4">
+                <div class="position-relative bg-secondary text-center text-md-right text-white mb-2 py-5 px-5">
+                    <img src="{% static 'Store/images/no01.png'%}" alt="">
+                    <div class="position-relative" style="z-index: 1;">
+                        <h5 class="text-uppercase text-primary mb-3">20% off the all order</h5>
+                        <h1 class="mb-4 font-weight-semi-bold">Shop Our Loungewear Collection</h1>
+                        <a href="{%url 'shop'%}" class="btn-one btn-outline-primary py-md-2 px-md-3">Shop Now</a>
                     </div>
-                    <br>
                 </div>
-                <br>
-                {%endfor%}
-                <br>
+            </div>
+            <br>
+            <br>
+            <div class="col-md-6 pb-4">
+                <div class="position-relative bg-secondary-two text-center text-md-left text-white mb-2 py-5 px-5">
+                    <img src="#" alt="">
+                    <div class="position-relative" style="z-index: 1;">
+                        
+                        <h5 class="text-uppercase text-primary mb-3">20% off the all order</h5>
+                        <h1 class="mb-4 font-weight-semi-bold">Shop Our Dresses Collection</h1>
+                        <a href="{%url 'shop'%}" class="btn-one btn-outline-primary py-md-2 px-md-3">Shop Now</a>
+                    </div>
+                </div>
             </div>
         </div>
-        <br>
     </div>
-
-
-
-    <!-- End size selction -->
-
-    <!-- Start Blog  -->
-    <div class="latest-blog">
-        <div class="container">
-            
+    <!-- Offer End -->
+    <div class="container">
+        <div class="products-box">
             <div class="row">
                 <div class="col-lg-12">
                     <div class="title-all text-center">
-                        <hr>
-                        <h1>Shop Clearance Sales</h1>
+                        <h1>Check Out Our New Arrivals</h1>
+                        <h2>Amazing offers available</h2>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Suscipit, totam excepturi!</p>
                         <hr>
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                    <div class="shop-cat-box">
-                        <div class="type-lb">
-                            <p class="sale">Best Seller</p>
-                        </div>
-                        <img class="img-fluid" src="{% static 'Store/images/002.jpg'%}" alt="" />
-                        <div class="mask-icon">
-                            <a class="cart" href="{%url 'mycart'%}">Add to Cart</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                    <div class="shop-cat-box">
-                        <div class="type-lb">
-                            <p class="sale">Best Seller</p>
-                        </div>
-                        <img class="img-fluid" src="{% static 'Store/images/010.jpg'%}" alt="" />
-                        <div class="mask-icon">
-                            <a class="cart" href="{%url 'mycart'%}">Add to Cart</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                    <div class="shop-cat-box">
-                        <div class="type-lb">
-                            <p class="sale">Best Seller</p>
-                        </div>
-                        <img class="img-fluid" src="{% static 'Store/images/014.jpg'%}" alt="" />
-                        <div class="mask-icon">
-                            <a class="cart" href="{%url 'mycart'%}">Add to Cart</a>
+            <div class="container">
+
+                <div class="row my-5">
+                    <div class="col-lg-12">
+                                                    
+                        <div class="featured-products-box owl-carousel owl-theme">
+                            <div class="item">
+                                <div class="products-single fix">
+                                    <div class="box-img-hover"> 
+                                        <img src="{% static 'Store/images/no01.png'%}" class="img-fluid" alt="Image">
+                                        <div class="mask-icon">
+                                            <ul>
+                                                <li><a href="{%url 'shop'%}" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
+                                                <li><a href="{%url 'wishlist'%}" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
+                                            </ul>
+                                            <a class="cart" href="{%url 'mycart'%}">Add to Cart</a>
+                                        </div>
+                                    </div>
+                                    <div class="why-text">
+                                        <h4>Lorem ipsum dolor sit amet</h4>
+                                        <h5> Ksh 2500</h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="products-single fix">
+                                    <div class="box-img-hover">
+                                        <img src="{% static 'Store/images/no02.png'%}" class="img-fluid" alt="Image">
+                                        <div class="mask-icon">
+                                            <ul>
+                                                <li><a href="{%url 'shop'%}" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
+                                                <li><a href="{%url 'wishlist'%}" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
+                                            </ul>
+                                            <a class="cart" href="{%url 'mycart'%}">Add to Cart</a>
+                                        </div>
+                                    </div>
+                                    <div class="why-text">
+                                        <h4>Lorem ipsum dolor sit amet</h4>
+                                        <h5> Ksh 4500</h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="products-single fix">
+                                    <div class="box-img-hover">
+                                        <img src="{% static 'Store/images/img-pro-01.jpg'%}" class="img-fluid" alt="Image">
+                                        <div class="mask-icon">
+                                            <ul>
+                                                <li><a href="{%url 'shop'%}" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
+                                                <li><a href="{%url 'wishlist'%}" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
+                                            </ul>
+                                            <a class="cart" href="{%url 'mycart'%}">Add to Cart</a>
+                                        </div>
+                                    </div>
+                                    <div class="why-text">
+                                        <h4>Lorem ipsum dolor sit amet</h4>
+                                        <h5> Ksh 3080</h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="products-single fix">
+                                    <div class="box-img-hover">
+                                        <img src="{% static 'Store/images/no02.png'%}" class="img-fluid" alt="Image">
+                                        <div class="mask-icon">
+                                            <ul>
+                                                <li><a href="{%url 'shop'%}" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
+                                                <li><a href="{%url 'wishlist'%}" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
+                                            </ul>
+                                            <a class="cart" href="{%url 'mycart'%}">Add to Cart</a>
+                                        </div>
+                                    </div>
+                                    <div class="why-text">
+                                        <h4>Lorem ipsum dolor sit amet</h4>
+                                        <h5> Ksh 6000</h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="products-single fix">
+                                    <div class="box-img-hover">
+                                        <img src="{% static 'Store/images/no01.png'%}" class="img-fluid" alt="Image">
+                                        <div class="mask-icon">
+                                            <ul>
+                                                <li><a href="{%url 'shop'%}" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
+                                                <li><a href="{%url 'wishlist'%}" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
+                                            </ul>
+                                            <a class="cart" href="{%url 'mycart'%}">Add to Cart</a>
+                                        </div>
+                                    </div>
+                                    <div class="why-text">
+                                        <h4>Lorem ipsum dolor sit amet</h4>
+                                        <h5> Ksh 6000</h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="products-single fix">
+                                    <div class="box-img-hover">
+                                        <img src="{% static 'Store/images/no02.png'%}" class="img-fluid" alt="Image">
+                                        <div class="mask-icon">
+                                            <ul>
+                                                <li><a href="{%url 'shop'%}" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
+                                                <li><a href="{%url 'wishlist'%}" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
+                                            </ul>
+                                            <a class="cart" href="{%url 'mycart'%}">Add to Cart</a>
+                                        </div>
+                                    </div>
+                                    <div class="why-text">
+                                        <h4>Lorem ipsum dolor sit amet</h4>
+                                        <h5> Ksh 4000</h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="products-single fix">
+                                    <div class="box-img-hover">
+                                        <img src="{% static 'Store/images/img-pro-02.jpg'%}" class="img-fluid" alt="Image">
+                                        <div class="mask-icon">
+                                            <ul>
+                                                <li><a href="{%url 'shop'%}" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
+                                                <li><a href="{%url 'wishlist'%}" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
+                                            </ul>
+                                            <a class="cart" href="{%url 'mycart'%}">Add to Cart</a>
+                                        </div>
+                                    </div>
+                                    <div class="why-text">
+                                        <h4>Lorem ipsum dolor sit amet</h4>
+                                        <h5> Ksh 1200</h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="products-single fix">
+                                    <div class="box-img-hover">
+                                        <img src="{% static 'Store/images/no02.png'%}" class="img-fluid" alt="Image">
+                                        <div class="mask-icon">
+                                            <ul>
+                                                <li><a href="{%url 'shop'%}" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
+                                                
+                                                <li><a href="{%url 'wishlist'%}" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
+                                            </ul>
+                                            <a class="cart" href="{%url 'mycart' %}">Add to Cart</a>
+                                        </div>
+                                    </div>
+                                    <div class="why-text">
+                                        <h4>Lorem ipsum dolor sit amet</h4>
+                                        <h5> Ksh 6000</h5>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+
     </div>
-    <!-- End Blog  -->
+
+</div> 
+
+<!-- testimonial bit -->
+
+
+
+         
+<!-----------------------------------------------end reviews section------------------------------------------------>
+<!-- Start Instagram Feed  -->
+
+<div class="main-container">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="title-all text-center">
+                
+                <h1>Checkout Our Instagram Page</h1>
+                <h2>Amazing offers available</h2>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Suscipit, totam excepturi!</p>
+                <hr>
+            </div>
+        </div>
+    </div>
+    <!-- end of row -->
+    <div class="instagram-box">
+        <div class="main-instagram owl-carousel owl-theme">
+            
+            <div class="item">
+                <div class="ins-inner-box">
+                    <img src="{% static 'Store/images/014.jpg'%}" alt="" />
+                    <div class="hov-in">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="ins-inner-box">
+                    <img src="{% static 'Store/images/013.jpg'%}" alt="" />
+                    <div class="hov-in">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="ins-inner-box">
+                    <img src="{% static 'Store/images/012.jpg'%}" alt="" />
+                    <div class="hov-in">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="ins-inner-box">
+                    <img src="{% static 'Store/images/010.jpg'%}" alt="" />
+                    <div class="hov-in">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Instagram Feed  -->
+</div>    
+
     
+            
 
 
-    {%endblock content%}
+{%endblock content%}
 
     

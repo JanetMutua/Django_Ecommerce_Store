@@ -142,16 +142,16 @@
      box-shadow: none !important 
 }
 /*------------------------------------------------------------------ LOADER -------------------------------------------------------------------*/
- #back-to-top {
+#back-to-top {
      position: fixed;
      bottom: 40px;
      right: 40px;
      z-index: 9999;
      width: 32px;
      height: 32px;
-     text-align: center;
+     text-align:center;
      line-height: 5px;
-     background: #ffd700;
+     background: #000000;
      color: #ffffff;
      cursor: pointer;
      border: 0;
@@ -160,6 +160,9 @@
      transition: opacity 0.2s ease-out;
      font-size: 28px;
 }
+
+      
+
 /*------------------------------------------------------------------ HEADER -------------------------------------------------------------------*/
  .main-top{
      background: #000000;
@@ -169,6 +172,11 @@
      float: left;
      width: 95px;
      margin-right: 10px;
+}
+
+.top-bar{
+    text-align: center;
+    flex: none;
 }
 .custom-select-box .form-control{
      background: none;
@@ -241,8 +249,9 @@
      color: #ffd700;
      font-size: 20px;
 }
+
  .our-link{
-     float: left;
+     float:left;
 }
  .our-link ul li{
      display: inline-block;
@@ -257,10 +266,10 @@
      color: #ffffff;
      font-weight: 700;
      text-transform: uppercase;
-     font-size: 14px;
+     font-size: 13px;
 }
  .our-link ul li a:hover{
-     color: #ffd700;
+     color: #ffffff;
 }
  .our-link ul li:last-child{
      border: none;
@@ -278,7 +287,7 @@
  .login-box .bootstrap-select .btn-light{
      padding: 4px;
      font-size: 14px;
-     background: #ffd700;
+     background: #000000;
      color: #fff;
      border: none;
      border-radius: 0px;
@@ -620,6 +629,12 @@
 }
  .btn-cart{
 }
+
+/* centering the button */
+.text-center {
+    text-align: center;
+  }
+
  .cart-list h6 a{
      font-size: 16px;
      font-weight: 700;
@@ -1195,7 +1210,7 @@
      position: relative;
 }
  .instagram-box::before{
-     background: rgba(0,0,0,0.9);
+     background: white;
      width: 100%;
      height: 100%;
      left: 0px;
@@ -1205,7 +1220,7 @@
      z-index: 0;
 }
  .main-instagram.owl-carousel .owl-nav button.owl-prev{
-     background: #000000;
+     background:white;
      position: absolute;
      z-index: 1;
      display: block;
@@ -1225,7 +1240,7 @@
      transition: all 0.3s ease;
 }
  .main-instagram.owl-carousel .owl-nav button.owl-next{
-     background: #000000;
+     background: white;
      position: absolute;
      z-index: 1;
      display: block;
@@ -1316,6 +1331,12 @@
 	font-size: 16px;
 	display: block;
 	float: none;
+}
+
+
+/* confirm this effect -------------------------------------------------------------------------------- */
+.footer-top-box-pry{
+    background-color: #ffffff;
 }
 
 .newsletter-box{
@@ -2205,7 +2226,7 @@
 }
  .new-account-login h5 {
      font-size: 18px;
-     color: #ffd700;
+     color: #1111111;
      font-weight: 600;
 }
  .new-account-login h5 a:hover{

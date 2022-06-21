@@ -3,349 +3,326 @@
 <html lang="en">
 <!-- Basic -->
 
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-        <!-- Mobile Metas -->
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <!-- Site Metas -->
-        <title>VENICA LADY</title>
-        <meta name="keywords" content="">
-        <meta name="description" content="">
-        <meta name="author" content="">
+    <!-- Site Metas -->
+    <title>VENICA LADY</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-        <!-- Site Icons -->
-        <!-- <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
-        <link rel="apple-touch-icon" href="images/apple-touch-icon.png"> -->
+    <!-- Site Icons -->
+    <!-- <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png"> -->
+ 
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{% static 'Store/bootstrap.min.css'%}">
+    <!-- Site CSS -->
+    <link rel="stylesheet" href=" {% static 'Store/style.css'%}">
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="{% static 'Store/responsive.css'%}">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href=" {% static 'Store/custom.css'%}">
+    
+    <link rel="stylesheet" href=" {% static 'Store/register.css'%}">
+    
+    <!-- css for newsletter -->
+    <link href="{% static 'Store/newsletter.css'%}" rel="stylesheet">
 
-        <!-- Bootstrap CSS -->
-        <link rel="stylesheet" href="{% static 'Store/bootstrap.min.css'%}">
-        <!-- Site CSS -->
-        <link rel="stylesheet" href="{% static 'Store/style.css'%}">
-        <!-- Responsive CSS -->
-        <link rel="stylesheet" href="{% static 'Store/responsive.css'%}">
-        <!-- Custom CSS -->
-        <link rel="stylesheet" href="{% static 'Store/custom.css'%}">
-        {% comment %} register css {% endcomment %}
+    <!-- end -->
+    
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css"/>
+    <!-- Default theme -->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/default.min.css"/>
 
-        <link rel="stylesheet" href="{% static 'Store/register.css'%}">
 
-        {% comment %} ALertify Js {% endcomment %}
-        <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css"/>
-        <!-- Default theme -->
-        <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/default.min.css"/>
+   
 
-        <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-        <![endif]-->
+</head>
 
-    </head>
-
-    <body>
+<body>
         <!-- Start Main Top -->
-        <div class="main-top">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                        <div class="right-phone-box">
-                            <p class = 'top-bar'> Whatsapp or Call :- <a href="#"> +254708762258/ +254780762259</a></p>
-                        </div>
-
-
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- End Main Top -->
-
-        <!-- Start Main Top -->
-        <header class="main-header">
-            <!-- Start Navigation -->
-            <nav class="navbar navbar-expand-lg navbar-light bg-light navbar-default bootsnav">
-                <div class="container">
-                    <div class="navbar-header">
-                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
-                        <i class="fa fa-bars"></i>
-                    </button>
-                        <a class="navbar-brand" href="index.html"><img src="#" class="logo" alt=""></a>
-                    </div>
-
-                    <!-- Collect the nav links, forms, and other content for toggling -->
-                    <div class="collapse navbar-collapse" id="navbar-menu">
-                        <ul class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp">
-                            <li class="nav-item active"><a class="nav-link" href="{%url 'home'%}">Home</a></li>
-                            <li class="nav-item"><a class="nav-link" href="{%url 'newarrival'%}">New Arrivals</a></li>
-                            <li class="dropdown">
-                                <a href="{%url 'shop'%}" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">Shop</a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="{%url 'trending'%}">Trending</a></li>
-                                    <li><a href="{%url 'shopsize'%}">Shop your Size</a></li>
-                                    <li><a href="{%url 'category'%}">Shop by Category</a></li>
-                                    <li><a href="{%url 'wishlist'%}">Wishlist</a></li>
-                                    <li><a href="{%url 'mycart'%}">Cart</a></li>
-                                    <li><a href="{%url 'checkout'%}">Checkout</a></li>
-                                </ul>
-                            </li>
-                            <li class="nav-item"><a class="nav-link" href="{%url 'clearance'%}">Clearance Sales</a></li>
-                            <li class="nav-item"><a class="nav-link" href="{%url 'contact'%}">Contact Us</a></li>
-                            
-                        </ul>
-                    </div>
-                    <!-- /.navbar-collapse -->
-
-                    <!-- Start Atribute Navigation -->
-                    <div class="attr-nav">
+    <div class="main-top">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                    
+                    <div class="our-link">
                         <ul>
-                            <li class="search"><a href="#"><i class="fa fa-search"></i></a></li>
-                            <li class="side-menu">
-                                <a href="#">
-                                    <i class="fa fa-shopping-bag"></i>
-    
-                                    <!-- <span class="badge">3</span>
-                                    <p>My Cart</p> -->
-    
-                                </a>
-                            </li>
-    
-                            {% comment %} login section {% endcomment %}
-                            {%if request.user.is_authenticated%}
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    {{request.user}}
-                                    </a>
-                                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <li><a class="dropdown-item" href="{%url 'mycart'%}">MyCart</a></li>
-                                    <li><a class="dropdown-item" href="{%url 'mycart'%}">Orders</a></li>
-                                    <li><hr class="dropdown-divider"></li>
-                                    <li><a class="dropdown-item" href="{%url 'logout'%}">Logout</a></li>
-                                    </ul>
-                                </li>
-                                {% comment %} <li><a href="{%url 'logout'%}">LOGOUT</i></a></li> {% endcomment %}
-    
-                            {%else%}
-                                <li><a href="{%url 'loginpage'%}"><i class="fa fa-user s_color"></i></a></li>
-                            {%endif%}
-                            {% comment %} shoping cart {% endcomment %}
+                            <li><a href="tel:+254708762258"> Call Us : +254708762258/ +254780762259</a></li>
                         </ul>
                     </div>
-                    <!-- End Atribute Navigation -->
                 </div>
-                <!-- Start Side Menu -->
-                <div class="side">
-                    <a href="#" class="close-side"><i class="fa fa-times"></i></a>
-                    <li class="cart-box">
-                        <ul class="cart-list">
-                            <li>
-                                <a href="#" class="photo"><img src="{% static 'Store/images/img-pro-01.jpg'%}" class="cart-thumb" alt="" /></a>
-                                <h6><a href="#">Delica omtantur </a></h6>
-                                <p>1x - <span class="price">Ksh 80.00</span></p>
-                            </li>
-                            <li>
-                                <a href="#" class="photo"><img src="{% static 'Store/images/img-pro-02.jpg'%}" class="cart-thumb" alt="" /></a>
-                                <h6><a href="#">Omnes ocurreret</a></h6>
-                                <p>1x - <span class="price">Ksh 60.00</span></p>
-                            </li>
-                            <li>
-                                <a href="#" class="photo"><img src="{% static 'Store/images/img-pro-03.jpg'%}" class="cart-thumb" alt="" /></a>
-                                <h6><a href="#">Agam facilisis</a></h6>
-                                <p>1x - <span class="price">Ksh 40.00</span></p>
-                            </li>
-                            <li class="total">
-                                <a href="#" class="btn btn-default hvr-hover btn-cart">VIEW CART</a>
-                                <span class="float-right"><strong>Total</strong>: Ksh 180.00</span>
-                            </li>
-                        </ul>
-                    </li>
-                </div>
-                <!-- End Side Menu -->
-            </nav>
-            <!-- End Navigation -->
-        </header>
-        <!-- End Main Top -->
-
-        <!-- Start Top Search -->
-        <div class="top-search">
-            <div class="container">
-                <div class="input-group">
-                    <span class="input-group-addon"><i class="fa fa-search"></i></span>
-                    <input type="text" class="form-control" placeholder="Search">
-                    <span class="input-group-addon close-search"><i class="fa fa-times"></i></span>
-                </div>
-            </div>
-        </div>
-        <!-- End Top Search -->
-        {%block content%}
-        
-        {%endblock content%}
-
-        <!-- Start Instagram Feed  -->
-    <div class="instagram-box">
-        <div class="col-lg-12">
-            <div class="title-all text-center">
-                <h1>Check Our Instagram Page</h1>
-                <hr>
-            </div>
-        </div>
-        <div class="main-instagram owl-carousel owl-theme">
-            
-            <div class="item">
-                <div class="ins-inner-box">
-                    <img src="{% static 'Store/images/014.jpg'%}" alt="" />
-                    <div class="hov-in">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <div class="ins-inner-box">
-                    <img src="{% static 'Store/images/013.jpg'%}" alt="" />
-                    <div class="hov-in">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <div class="ins-inner-box">
-                    <img src="{% static 'Store/images/012.jpg'%}" alt="" />
-                    <div class="hov-in">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <div class="ins-inner-box">
-                    <img src="{% static 'Store/images/010.jpg'%}" alt="" />
-                    <div class="hov-in">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                    </div>
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                    <div class="login-box">
+                        <select id="basic" class="selectpicker show-tick form-control" data-placeholder="Sign In">
+                            <option>Register Here</option>
+                            <option>Sign In</option>
+                        </select>
+                    </div> 
                 </div>
             </div>
         </div>
     </div>
-    <!-- End Instagram Feed  -->
+    <!-- End Main Top -->
 
-        <!-- Start Footer  -->
-        <footer>
-            <div class="footer-main">
-                <div class="container">
-                        <!-- <div class="col-lg-4 col-md-12 col-sm-12">
-                            <div class="footer-top-box">
-                                <h3>Newsletter</h3>
-                                <form class="newsletter-box">
-                                    <div class="form-group">
-                                        <input class="" type="email" name="Email" placeholder="Email Address*" />
-                                        <i class="fa fa-envelope"></i>
-                                    </div>
-                                    <button class="btn hvr-hover" type="submit">Submit</button>
-                                </form>
-                            </div>
-                        </div> -->
+    <!-- Start Main Top -->
+    <header class="main-header">
+        <!-- Start Navigation -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light navbar-default bootsnav">
+            <div class="container">
+                <div class="navbar-header">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fa fa-bars"></i>
+                </button>
+                    <a class="navbar-brand" href="{%url 'home'%}"><img src="#" class="logo" alt=""></a>
+                </div>
+               
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="navbar-menu">
+                    <ul class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp">
+                        <li class="nav-item active"><a class="nav-link" href="{%url 'home'%}">Home</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">Shop by Category</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="{%url 'shop'%}">Dresses</a></li>
+                                <li><a href="{%url 'shop'%}">Skirts</a></li>
+                                <li><a href="{%url 'shop'%}">Trousers & Shorts</a></li>
+                                <li><a href="{%url 'shop'%}">Blazers</a></li>
+                                <li><a href="{%url 'shop'%}">Shirts & Tops</a></li>
+                                <li><a href="{%url 'shop'%}">Lounge Wear</a></li>
+                                <li><a href="{%url 'shop'%}">Shoes</a></li>
+                                <li><a href="{%url 'shop'%}">Accessories</a></li>
+                                <li><a href="{%url 'shop'%}">OccassionWear</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="{%url 'newarrival'%}">New Arrivals</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">Plus Size</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="{%url 'shop'%}">PlusSize-OccassionWear</a></li>
+                                <li><a href="{%url 'shop'%}">PlusSize-LoungeWear</a></li>
+                                <li><a href="{%url 'shop'%}">PlusSize-Dresses</a></li>
+                                <li><a href="{%url 'shop'%}">PlusSize-Skirts</a></li>
+                                <li><a href="{%url 'shop'%}">PlusSize-Trousers&Shorts</a></li>                                   
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">Petite</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="{%url 'shop'%}">Petite-OccassionWear</a></li>
+                                <li><a href="{%url 'shop'%}">Petite-LoungeWear</a></li>
+                                <li><a href="{%url 'shop'%}">Petite-Dresses</a></li>
+                                <li><a href="{%url 'shop'%}">Petite-Skirts</a></li>
+                                <li><a href="{%url 'shop'%}">Petite-Trousers&Shorts</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="{%url 'shop'%}">Sales</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">Clearance</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="{%url 'shop'%}">Clearance-Dresses</a></li>
+                                <li><a href="{%url 'shop'%}">Clearance-Skirts</a></li>
+                                <li><a href="{%url 'shop'%}">Clearance-Trousers&Shorts</a></li>
+                                <li><a href="{%url 'shop'%}">Clearance-Blazers</a></li>
+                                <li><a href="{%url 'shop'%}">Clearance-Shirts&Tops</a></li>
+                                <li><a href="{%url 'shop'%}">Clearance-Lounge Wear</a></li>
+                                <li><a href="{%url 'shop'%}">Clearance-Shoes</a></li>
+                                <li><a href="{%url 'shop'%}">Clearance-Accessories</a></li>
+                                <li><a href="{%url 'shop'%}">Clearance-OccassionWear</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="{%url 'contact'%}">Contact</a></li>   
+                    </ul>
+                </div>
+                <!-- /.navbar-collapse -->
+
+                <!-- Start Atribute Navigation -->
+                <div class="attr-nav">
+                    <ul>
+                        <li class="search"><a href="#"><i class="fa fa-search"></i></a></li>
+                        <li class="side-menu">
+                            <a href="#">
+                                <i class="fa fa-shopping-bag"></i>
+                            </a>
+                        </li>        
+                    </ul>
+                </div>
+                <!-- End Atribute Navigation -->
+            </div>
+            <!-- Start Side Menu -->
+            <div class="side">
+                <a href="#" class="close-side"><i class="fa fa-times"></i></a>
+                <li class="cart-box">
+                    <ul class="cart-list"> 
+                        <li>
+                            <a href="#" class="photo"><img src="{% static 'Store/images/img-pro-01.jpg'%}" class="cart-thumb" alt="" /></a>
+                            <h6><a href="#">Delica omtantur </a></h6>
+                            <p>1x - <span class="price">Ksh 80.00</span></p>
+                        </li>
+                        <li>
+                            <a href="#" class="photo"><img src="{% static 'Store/images/img-pro-02.jpg'%}" class="cart-thumb" alt="" /></a>
+                            <h6><a href="#">Omnes ocurreret</a></h6>
+                            <p>1x - <span class="price">Ksh 60.00</span></p>
+                        </li>
+                        <li>
+                            <a href="#" class="photo"><img src="{% static 'Store/images/img-pro-03.jpg'%}" class="cart-thumb" alt="" /></a>
+                            <h6><a href="#">Agam facilisis</a></h6>
+                            <p>1x - <span class="price">Ksh 40.00</span></p>
+                        </li>
+                        <li class="total">
+                            <a href="{%url 'mycart'%}" class="btn btn-default hvr-hover btn-cart">VIEW CART</a>
+                            <span class="float-right"><strong>Total</strong>: Ksh 180.00</span>
+                        </li>
+                    </ul>
+                </li>
+            </div>
+            <!-- End Side Menu -->
+        </nav>
+        <!-- End Navigation -->
+    </header>
+    <!-- End Main Top -->
+
+    <!-- Start Top Search -->
+    <div class="top-search">
+        <div class="container">
+            <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-search"></i></span>
+                <input type="text" class="form-control" placeholder="Search">
+                <span class="input-group-addon close-search"><i class="fa fa-times"></i></span>
+            </div>
+        </div>
+    </div>
+    <!-- End Top Search -->
+
+
+    {%block content%}
+        
+    {%endblock content%}
+
+    
+   
+   <!-- Start Instagram Feed  -->
+    
+
+    <div class="wrapper">          
+        <!-- Newsletter Start -->
+        <div class="newsletter">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Subscribe Our Newsletter</h2>
+                </div>
+                <div class="form">
+                    <input class="form-control" placeholder="Email here">
+                    <button class="btn">Submit</button>
+                </div>
+            </div>
+        </div>
+        <!-- Newsletter End -->
+
+
+        <!-- Footer Start -->
+        <div class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-lg-4">
+                        <div class="footer-link">
+                            <h2>Quick Links</h2>
+                            <a href="{%url 'home'%}">Size Chart</a>
+                            <a href="{%url 'home'%}">Reviews</a>
+                            <a href="{%url 'contact'%}">Contact Us</a>
+                            <a href="{%url 'terms'%}">Terms &amp; Conditions</a>
+                            <a href="{%url 'privacy'%}">Privacy Policy</a>
+                            <a href="{%url 'shipping'%}">Shipping Policy</a>
+                            <a href="{%url 'returns'%}">Return Policy</a>
+                            <a href="{%url 'home'%}">FAQs</a>
+                        </div>
                     </div>
-                    <hr>
-                    <div class="row">
-                        <div class="col-lg-4 col-md-12 col-sm-12">
-                            <div class="footer-link">
-                                <h4>Quick Links</h4>
-                                <ul>
-                                    <li><a href="{%url 'category'%}">Categories</a></li>
-                                    <li><a href="{%url 'shop'%}">New Arrivals</a></li>
-                                    <li><a href="#">Size Chart</a></li>
-                                    <li><a href="{%url 'contact'%}">Contact Us</a></li>
-                                    <li><a href="#">Reviews</a></li>
-                                    <li><a href="#">Terms &amp; Conditions</a></li>
-                                    <li><a href="#">Privacy Policy</a></li>
-                                    <li><a href="#">Delivery Information</a></li>
-                                </ul>
-                            </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="footer-contact">
+                            <h2>Get In Touch</h2>
+                            <p><i class="fas fa-map-marker-alt"></i>Rehema place Suite F48,<br>Ngong Rd<br>Kilimani(next to Eastland hotel)</p>
+                            <p><i class="fas fa-phone-square"></i>+254708762258/ +254780762259</p>
+                            <p><i class="fas fa-envelope"></i>contactinfo@gmail.com</p>
+                            
                         </div>
-                        <div class="col-lg-4 col-md-12 col-sm-12">
-                            <div class="footer-link-contact">
-                                <h4>Contact Us</h4>
-                                <ul>
-                                    <li>
-                                        <p><i class="fas fa-map-marker-alt"></i>Rehema place Suite F48,<br>Ngong Rd<br>Kilimani(next to Eastland hotel)  </p>
-                                    </li>
-                                    <li>
-                                        <p><i class="fas fa-phone-square"></i>Phone: <a href="tel:+254708762258">+254708762258/ +254780762259</a></p>
-                                    </li>
-                                    <li>
-                                        <p><i class="fas fa-envelope"></i>Email: <a href="mailto:contactinfo@gmail.com">contactinfo@gmail.com</a></p>
-                                    </li>
-                                </ul>
-                            </div>
+                    </div>
+        
+                    <div class="col-md-6 col-lg-4">
+                        <div class="footer-link">
+                            <h2>Business Time</h2>
+                            <p>Monday - Friday: 08.00am to 05.00pm</p>
+                            <p>Saturday: 10.00am to 08.00pm</p>
+                            <p>Sunday: Closed</p>
                         </div>
-                        <br>
-                        <div class="col-lg-4 col-md-12 col-sm-12">
-                            <div class="footer-top-box">
-                                <h3>Business Time</h3>
-                                <ul class="list-time">
-                                    <li>Monday - Friday: 08.00am to 05.00pm</li> <li>Saturday: 10.00am to 08.00pm</li> <li>Sunday: <span>Closed</span></li>
-                                </ul>
-                            </div>
-                            <div class="footer-top-box">
-                                <h3>Social Media</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                <ul>
-                                    <li><a href="https://www.facebook.com/venicalady/"><i class="fab fa-facebook" aria-hidden="true"></i></a></li>
-                                    <li><a href="https://mobile.twitter.com/venicalady"><i class="fab fa-twitter" aria-hidden="true"></i></a></li>
-                                    <li><a href="https://www.instagram.com/venicalady/"><i class="fab fa-instagram" aria-hidden="true"></i></a></li>
-                                    <li><a href=" https://wa.me/+254708762258?text=Can%20I%20order%20today%20?" target='_blank'><i class="fab fa-whatsapp" aria-hidden="true"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>                 
+                        <div class="footer-social">
+                            <a href="https://mobile.twitter.com/venicalady"><i class="fab fa-twitter"></i></a>
+                            <a href="https://www.facebook.com/venicalady/"><i class="fab fa-facebook-f"></i></a>
+                            <a href="https://www.instagram.com/venicalady/"><i class="fab fa-instagram"></i></a>
+                            <a href=" https://wa.me/+254708762258?text=Can%20I%20order%20today%20?"><i class="fab fa-whatsapp"></i></a>
+                        </div>
                     </div>
                 </div>
             </div>
-        </footer>
-        <!-- End Footer  -->
-
-        <!-- Start copyright  -->
-        <div class="footer-copyright">
-            <p class="footer-company">All Rights Reserved. &copy; <a href="#">VENICALADY</a>
+            
+            <div class="container copyright">
+                <div class="row">
+                    <div class="col-md-6">
+                        <p>&copy; <a href="#">Venica Lady</a>, All Right Reserved.</p>
+                    </div>
+                </div>
+            </div>
         </div>
-        <!-- End copyright  -->
+        <!-- Footer End -->
+        
+    </div>
 
-        <a href="#" id="back-to-top" title="Back to top" style="display: none;">&uarr;</a>
+    <a href="#" id="back-to-top" title="Back to top" style="display: none;">&uarr;</a>
+</div>
+<!-- ALL JS FILES -->
 
-        <!-- ALL JS FILES -->
+
+<!-- ALL JS FILES -->
 
 
-    <script src="{% static 'js/jquery-3.2.1.min.js'%}"></script>
-    <script src="{% static 'js/popper.min.js'%}"></script>
-    <script src="{% static 'js/bootstrap.min.js'%}"></script>
+<script src=" {% static 'js/jquery-3.2.1.min.js'%}"></script>
+<script src=" {% static 'js/popper.min.js'%}"></script>
+<script src=" {% static 'js/bootstrap.min.js'%}"></script>
 
-    <!-- ALL PLUGINS -->
+<!-- ALL PLUGINS -->
 
-    <script src="{% static 'js/jquery.superslides.min.js'%}"></script>
-    <script src="{% static 'js/bootstrap-select.js'%}"></script>
-    <script src="{% static 'js/inewsticker.js'%}"></script>
-    <script src="{% static 'js/bootsnav.js'%}"></script>
-    <script src="{% static 'js/images-loded.min.js'%}"></script>
-    <script src="{% static 'js/isotope.min.js'%}"></script>
-    <script src="{% static 'js/owl.carousel.min.js'%}"></script>
-    <script src="{% static 'js/baguetteBox.min.js'%}"></script>
-    <script src="{% static 'js/form-validator.min.js'%}"></script>
-    <script src="{% static 'js/contact-form-script.js'%}"></script>
-    <script src="{% static 'js/custom.js'%}"></script>
+<script src="{% static 'js/jquery.superslides.min.js'%}"></script>
+<script src="{% static 'js/bootstrap-select.js'%}"></script>
+<script src="{% static 'js/inewsticker.js'%}"></script>
+<script src="{% static 'js/bootsnav.js'%}"></script>
+<script src="{% static 'js/images-loded.min.js'%}"></script>
+<script src="{% static 'js/isotope.min.js'%}"></script>
+<script src="{% static 'js/owl.carousel.min.js'%}"></script>
+<script src="{% static 'js/baguetteBox.min.js'%}"></script>
+<script src="{% static 'js/form-validator.min.js'%}"></script>
+<script src="{% static 'js/contact-form-script.js'%}"></script>
+<script src="{% static 'js/custom.js'%}"></script>
 
-    
-    {% comment %} script for loading icons on my website {% endcomment %}
 
-    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<!-- JavaScript -->
+<script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
 
-    {% comment %} alertify js {% endcomment %}
-    <!-- JavaScript -->
-    <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
-    
-    {% comment %} cart.js {% endcomment %}
 
-    <script type='text/javascript' src="{% static 'Store/js/cart.js'%}"></script>
-    
+<script type='text/javascript' src="{% static 'js/cart.js'%}"></script>
+<!-- End Wishlist -->
+
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.js"></script>
+<script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+<script src="{% static 'js/script.js'%}">  </script>
+
 </body>
-
 </html>
-    
