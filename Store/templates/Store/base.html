@@ -87,18 +87,19 @@
                     <ul class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp">
                         <li class="nav-item active"><a class="nav-link" href="{%url 'home'%}">Home</a></li>
                         <li class="dropdown">
-                            <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">Shop by Category</a>
+                            <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">ShopCategory</a>
                             <ul class="dropdown-menu">
-                                <li><a href="{%url 'shop'%}">Dresses</a></li>
-                                <li><a href="{%url 'shop'%}">Skirts</a></li>
+                                <li><a href="#">{{item.name}}</a></li>
+                                <!-- <li><a href="{%url 'shop'%}">Skirts</a></li>
                                 <li><a href="{%url 'shop'%}">Trousers & Shorts</a></li>
                                 <li><a href="{%url 'shop'%}">Blazers</a></li>
                                 <li><a href="{%url 'shop'%}">Shirts & Tops</a></li>
                                 <li><a href="{%url 'shop'%}">Lounge Wear</a></li>
                                 <li><a href="{%url 'shop'%}">Shoes</a></li>
                                 <li><a href="{%url 'shop'%}">Accessories</a></li>
-                                <li><a href="{%url 'shop'%}">OccassionWear</a></li>
+                                <li><a href="{%url 'shop'%}">OccassionWear</a></li> -->
                             </ul>
+     
                         </li>
                         <li class="nav-item"><a class="nav-link" href="{%url 'newarrival'%}">New Arrivals</a></li>
                         <li class="dropdown">
@@ -121,11 +122,11 @@
                                 <li><a href="{%url 'shop'%}">Petite-Trousers&Shorts</a></li>
                             </ul>
                         </li>
-                        <li class="nav-item"><a class="nav-link" href="{%url 'shop'%}">Sales</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{%url 'sales'%}">Sales</a></li>
                         <li class="dropdown">
                             <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">Clearance</a>
                             <ul class="dropdown-menu">
-                                <li><a href="{%url 'shop'%}">Clearance-Dresses</a></li>
+                                <li><a href="{%url 'clearance'%}">Clearance-Dresses</a></li>
                                 <li><a href="{%url 'shop'%}">Clearance-Skirts</a></li>
                                 <li><a href="{%url 'shop'%}">Clearance-Trousers&Shorts</a></li>
                                 <li><a href="{%url 'shop'%}">Clearance-Blazers</a></li>

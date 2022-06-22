@@ -40,7 +40,7 @@ urlpatterns = [
 
     path('shopsize/', Shopsize, name='shopsize'),
     path('Shop/', Shop, name='shop'),
-
+    path('sales/', Sales, name="sales"),
 
 
     # -----------------------------------------add to wishlist-----------------------------------------------
@@ -68,7 +68,7 @@ urlpatterns = [
     
     #------------------------------------------fetching products------------------------------------------
 
-    path('category', categories, name='category'),
+    # path('category', categories, name='category'),
 
 
     path('categories/<str:slug>', category_view, name='product_category'),

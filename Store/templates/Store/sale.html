@@ -8,10 +8,10 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <h2>Clearance</h2>
+                    <h2>On Sale</h2>
                     <ul class="breadcrumb">
                         <li class="breadcrumb-item"><a href="{%url 'home'%}">Home</a></li>
-                        <li class="breadcrumb-item active">Shop</li>
+                        <li class="breadcrumb-item active">Sales</li>
                     </ul>
                 </div>
             </div>
@@ -37,7 +37,7 @@
 									<option value="4">Best Selling</option>
 								</select>
                                 </div>
-                                <p>Showing all {{item.quantity}} results</p>
+                                <p>Showing all 4 results</p>
                             </div>
                             <div class="col-12 col-sm-4 text-center text-sm-right">
                                 <ul class="nav nav-tabs ml-auto">
@@ -55,7 +55,7 @@
                             <div class="tab-content">
                                 <div role="tabpanel" class="tab-pane fade show active" id="grid-view">
                                     <div class="row">
-                                        {%for item in clearance%}
+                                        {%for item in sale%}
                                             <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4">
                                                 <div class="products-single fix">
                                                     <div class="box-img-hover">
@@ -69,7 +69,7 @@
                                                     </div>
                                                     <div class="why-text">
                                                         <h4>{{item.name}}</h4>
-                                                        <h5>Ksh.{{item.selling_price| stringformat:'d'}}</h5>
+                                                        <h5>Ksh.{{item.discount_price| stringformat:'d'}}</h5>
                                                     </div>
                                                 </div>
                                             </div>

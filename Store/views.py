@@ -8,9 +8,11 @@ from django.views.generic import ListView, DetailView
 # Create your views here.
 
 def Storefront(request):
-    size = Size.objects.filter(status=0)
-    context = {'size': size}
+    new = Product.objects.filter(new_arrival = 1)
+    trending = Product.objects.filter(trending = 1)
+    context = {'new': new, 'trending':trending}
     return render(request, 'Store/index.html', context)
+
 
 # -----------------------------------------------shop view----------------------------------------
 
@@ -65,7 +67,7 @@ def Contact(request):
 def categories(request):
     category = Category.objects.filter(status=0)
     context = {'category': category}
-    return render(request, 'Store/categories.html', context)
+    return render(request, 'Store/base.html', context)
 
 
 
@@ -74,11 +76,11 @@ def category_view(request, slug):
         products= Product.objects.filter(category__slug = slug)
         category_name = Category.objects.filter(slug = slug).first()
         context = {'products':products, 'category_name': category_name}
-        return render(request, 'Store/product_category.html', context)
+        return render(request, 'Store/base.html', context)
 
     else:
         messages.warning(request, 'No such Category')
-        return redirect('categories')
+        return redirect('/')
 
 
 
@@ -88,6 +90,13 @@ def Shopsize(request):
     size = Size.objects.filter(status=0)
     context = {'size': size}
     return render(request, 'Store/shopsize.html', context)
+
+
+def Sales(request):
+    sale = Sale.objects.filter(status=0)
+    context = {'sale': sale}
+    return render(request, 'Store/sale.html', context)
+
 
 
 # ----------------------------------------------cart and wishlist---------------------------------------
