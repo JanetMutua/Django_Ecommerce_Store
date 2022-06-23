@@ -86,57 +86,49 @@
                 <div class="collapse navbar-collapse" id="navbar-menu">
                     <ul class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp">
                         <li class="nav-item active"><a class="nav-link" href="{%url 'home'%}">Home</a></li>
+                        {%if cat_menu%}
                         <li class="dropdown">
                             <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">ShopCategory</a>
                             <ul class="dropdown-menu">
-                                <li><a href="#">{{item.name}}</a></li>
-                                <!-- <li><a href="{%url 'shop'%}">Skirts</a></li>
-                                <li><a href="{%url 'shop'%}">Trousers & Shorts</a></li>
-                                <li><a href="{%url 'shop'%}">Blazers</a></li>
-                                <li><a href="{%url 'shop'%}">Shirts & Tops</a></li>
-                                <li><a href="{%url 'shop'%}">Lounge Wear</a></li>
-                                <li><a href="{%url 'shop'%}">Shoes</a></li>
-                                <li><a href="{%url 'shop'%}">Accessories</a></li>
-                                <li><a href="{%url 'shop'%}">OccassionWear</a></li> -->
+                                {%for item in cat_menu%}
+                                <li><a href="{%url 'shop'%}">{{item.name}}</a></li>
+                                {%endfor%}
                             </ul>
-     
                         </li>
+                        {%endif%}
+
                         <li class="nav-item"><a class="nav-link" href="{%url 'newarrival'%}">New Arrivals</a></li>
+                        {%if plussize%}
                         <li class="dropdown">
                             <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">Plus Size</a>
                             <ul class="dropdown-menu">
-                                <li><a href="{%url 'shop'%}">PlusSize-OccassionWear</a></li>
-                                <li><a href="{%url 'shop'%}">PlusSize-LoungeWear</a></li>
-                                <li><a href="{%url 'shop'%}">PlusSize-Dresses</a></li>
-                                <li><a href="{%url 'shop'%}">PlusSize-Skirts</a></li>
-                                <li><a href="{%url 'shop'%}">PlusSize-Trousers&Shorts</a></li>                                   
+                                {%for size in plussize%}
+                                <li><a href="{%url 'shop'%}">PlusSize-{{size.name}}</a></li>
+                                {%endfor%}                                  
                             </ul>
                         </li>
+                        {%endif%}
+                        {%if petite%}
                         <li class="dropdown">
                             <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">Petite</a>
                             <ul class="dropdown-menu">
-                                <li><a href="{%url 'shop'%}">Petite-OccassionWear</a></li>
-                                <li><a href="{%url 'shop'%}">Petite-LoungeWear</a></li>
-                                <li><a href="{%url 'shop'%}">Petite-Dresses</a></li>
-                                <li><a href="{%url 'shop'%}">Petite-Skirts</a></li>
-                                <li><a href="{%url 'shop'%}">Petite-Trousers&Shorts</a></li>
+                                {%for sizep in petite%}
+                                <li><a href="{%url 'shop'%}">Petite-{{sizep.name}}</a></li>
+                                {%endfor%}
                             </ul>
                         </li>
+                        {%endif%}
                         <li class="nav-item"><a class="nav-link" href="{%url 'sales'%}">Sales</a></li>
+                        {%if clearance%}
                         <li class="dropdown">
                             <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">Clearance</a>
                             <ul class="dropdown-menu">
-                                <li><a href="{%url 'clearance'%}">Clearance-Dresses</a></li>
-                                <li><a href="{%url 'shop'%}">Clearance-Skirts</a></li>
-                                <li><a href="{%url 'shop'%}">Clearance-Trousers&Shorts</a></li>
-                                <li><a href="{%url 'shop'%}">Clearance-Blazers</a></li>
-                                <li><a href="{%url 'shop'%}">Clearance-Shirts&Tops</a></li>
-                                <li><a href="{%url 'shop'%}">Clearance-Lounge Wear</a></li>
-                                <li><a href="{%url 'shop'%}">Clearance-Shoes</a></li>
-                                <li><a href="{%url 'shop'%}">Clearance-Accessories</a></li>
-                                <li><a href="{%url 'shop'%}">Clearance-OccassionWear</a></li>
+                                {%for sale in clearance%}
+                                <li><a href="{%url 'clearance'%}">Clearance-{{sale.name}}</a></li>
+                                {%endfor%}
                             </ul>
                         </li>
+                        {%endif%}
                         <li class="nav-item"><a class="nav-link" href="{%url 'contact'%}">Contact</a></li>   
                     </ul>
                 </div>

@@ -7,6 +7,11 @@ from django.views.generic import ListView, DetailView
 
 # Create your views here.
 
+# class Home(ListView):
+#      context_object_name = 'item'
+#      queryset = Product.objects.filter(status= 0)
+#      template_name = 'Store/index.html'
+
 def Storefront(request):
     new = Product.objects.filter(new_arrival = 1)
     trending = Product.objects.filter(trending = 1)
@@ -14,29 +19,61 @@ def Storefront(request):
     return render(request, 'Store/index.html', context)
 
 
+
+
 # -----------------------------------------------shop view----------------------------------------
 
-def Shop(request):
-    products = Product.objects.filter(status=0)
-    context = {'products': products}
-    return render(request, 'Store/shop.html', context)
+class Shop(ListView):
+     context_object_name = 'products'
+     queryset = Product.objects.filter(status=0)
+     template_name = 'Store/shop.html'
+
+
 
 # ---------------------------------------------shop selections----------------------------------
-def Trending(request):
-    trending = Product.objects.filter(trending = 1)
-    context = {'trending': trending}
-    return render(request, 'Store/trending.html', context)
 
-def Clearance(request):
-    clearance = Product.objects.filter(clearance_sale = 1)
-    context = {'clearance': clearance}
-    return render(request, 'Store/clearance.html', context)
+class Trending(ListView):
+     context_object_name = 'trending'
+     queryset = Product.objects.filter(trending= 1)
+     template_name = 'Store/trending.html'
 
 
-def NewArrival(request):
-    new = Product.objects.filter(new_arrival = 1)
-    context = {'new': new}
-    return render(request, 'Store/newarrivals.html', context)
+class Clearance(ListView):
+    context_object_name = 'clearance'
+    queryset = Product.objects.filter(clearance_sale= 1)
+    template_name = 'Store/clearance.html'
+
+
+    def get_context_data(self, *args, **kwargs):
+        cat_menu = Category.objects.filter(status=0)
+        plussize = Category.objects.filter(PlusSize = 1)
+        clearance = Category.objects.filter(Clearance= 1)
+        petite = Category.objects.filter(Petite = 1)
+
+        context =  super(Clearance, self).get_context_data(*args, **kwargs)
+        context = {'cat_menu': cat_menu,'plussize': plussize,'clearance': clearance, 'petite':petite}  
+            
+        return context
+
+
+class NewArrival(ListView):
+    context_object_name = 'new'
+    queryset = Product.objects.filter(new_arrival = 1)
+    template_name = 'Store/newarrivals.html'
+
+
+    def get_context_data(self, *args, **kwargs):
+        cat_menu = Category.objects.filter(status=0)
+        plussize = Category.objects.filter(PlusSize = 1)
+        clearance = Category.objects.filter(Clearance= 1)
+        petite = Category.objects.filter(Petite = 1)
+
+        context =  super(NewArrival, self).get_context_data(*args, **kwargs)
+        context = {'cat_menu': cat_menu,'plussize': plussize,'clearance': clearance, 'petite':petite}  
+            
+        return context
+
+    
 
 
 # ----------------------------------------------contact us---------------------------------------
@@ -67,7 +104,7 @@ def Contact(request):
 def categories(request):
     category = Category.objects.filter(status=0)
     context = {'category': category}
-    return render(request, 'Store/base.html', context)
+    return render(request, 'Store/categories.html', context)
 
 
 
@@ -76,7 +113,7 @@ def category_view(request, slug):
         products= Product.objects.filter(category__slug = slug)
         category_name = Category.objects.filter(slug = slug).first()
         context = {'products':products, 'category_name': category_name}
-        return render(request, 'Store/base.html', context)
+        return render(request, 'Store/product_category.html', context)
 
     else:
         messages.warning(request, 'No such Category')
@@ -90,6 +127,8 @@ def Shopsize(request):
     size = Size.objects.filter(status=0)
     context = {'size': size}
     return render(request, 'Store/shopsize.html', context)
+
+
 
 
 def Sales(request):

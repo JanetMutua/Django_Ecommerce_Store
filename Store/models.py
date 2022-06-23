@@ -30,6 +30,9 @@ class Category(models.Model):
     description = models.TextField(max_length=500, name=False, blank=False)
     status = models.BooleanField(default=False, help_text='0=default, 1=Hidden')
     created_at = models.DateTimeField(auto_now_add=True)
+    PlusSize = models.BooleanField(default=False, help_text='0=default, 1=PlusSize')
+    Clearance = models.BooleanField(default=False, help_text='0=default, 1=Clearance')
+    Petite = models.BooleanField(default=False, help_text='0=default, 1=Petite')
 
 
     def __str__(self):
@@ -47,7 +50,7 @@ class Size_categorie(models.Model):
 
 
     def __str__(self):
-        return self.size_type
+        return self.slug
 
 class Size(models.Model):
     size_no = models.IntegerField(null=False, blank=False)

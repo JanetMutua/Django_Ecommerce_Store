@@ -39,7 +39,7 @@ urlpatterns = [
     # ------------------------------------------shop urls-----------------------------------------------------
 
     path('shopsize/', Shopsize, name='shopsize'),
-    path('Shop/', Shop, name='shop'),
+    path('Shop/', Shop.as_view(), name='shop'),
     path('sales/', Sales, name="sales"),
 
 
@@ -75,9 +75,9 @@ urlpatterns = [
 
     # path('categories/<str:slug>/<int:pk>', Product_detail, name='productdetail'),
 
-    path('trending/', Trending, name='trending' ),
-    path('clearancesales/', Clearance, name='clearance'),
-    path('newarrivals/', NewArrival, name='newarrival'),
+    path('trending/', Trending.as_view(), name='trending' ),
+    path('clearancesales/', Clearance.as_view(), name='clearance'),
+    path('newarrivals/', NewArrival.as_view(), name='newarrival'),
 
 
     #--------------------------------footer quicklinks---------------------------------------------
