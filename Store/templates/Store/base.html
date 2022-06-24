@@ -102,8 +102,8 @@
                         <li class="dropdown">
                             <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">Plus Size</a>
                             <ul class="dropdown-menu">
-                                {%for size in plussize%}
-                                <li><a href="{%url 'shop'%}">PlusSize-{{size.name}}</a></li>
+                                {%for item in plussize%}
+                                <li><a href="{%url 'shop'%}">PlusSize-{{item.name}}</a></li>
                                 {%endfor%}                                  
                             </ul>
                         </li>
@@ -112,8 +112,8 @@
                         <li class="dropdown">
                             <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">Petite</a>
                             <ul class="dropdown-menu">
-                                {%for sizep in petite%}
-                                <li><a href="{%url 'shop'%}">Petite-{{sizep.name}}</a></li>
+                                {%for item in petite%}
+                                <li><a href="{%url 'shop'%}">Petite-{{item.name}}</a></li>
                                 {%endfor%}
                             </ul>
                         </li>
@@ -123,8 +123,8 @@
                         <li class="dropdown">
                             <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">Clearance</a>
                             <ul class="dropdown-menu">
-                                {%for sale in clearance%}
-                                <li><a href="{%url 'clearance'%}">Clearance-{{sale.name}}</a></li>
+                                {%for item in clearance%}
+                                <li><a href="{%url 'clearance'%}">Clearance-{{item.name}}</a></li>
                                 {%endfor%}
                             </ul>
                         </li>

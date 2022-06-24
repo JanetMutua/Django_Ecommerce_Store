@@ -59,7 +59,6 @@
                                         {%for item in new%}
                                         <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4 product_data">
                                             {% csrf_token %}
-                                            {% comment %} added product id to enable add to cart and wishlist {% endcomment %}
                                             <input type="hidden" value="{{item.id}}", class="prod_id">
                                             <div class="products-single fix">
                                                 <div class="box-img-hover">
@@ -71,7 +70,7 @@
                                                         </ul>
                                                         <a class="cart" href="{%url 'mycart' %}"><button class= 'btn btn-outline-secondary addToCartBtn'>Add to Cart</button></a>
                                                                                                                 
-                                                        {% comment %} <a class="cart" href="cart.html">Add to Cart</a> {% endcomment %}
+                                                       <!-- <a class="cart" href="cart.html">Add to Cart</a> -->
                                                     </div>
                                                     
                                                 </div>
