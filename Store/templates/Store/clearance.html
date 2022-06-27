@@ -1,7 +1,8 @@
 {%extends './base.html'%}
-    {%block content%}
-    {%load static%}
+{%load static%}
 
+    {%block content%}
+    
 
     <!-- Start All Title Box -->
     <div class="all-title-box">
@@ -44,9 +45,6 @@
                                     <li>
                                         <a class="nav-link active" href="#grid-view" data-toggle="tab"> <i class="fa fa-th"></i> </a>
                                     </li>
-                                    <li>
-                                        <a class="nav-link" href="#list-view" data-toggle="tab"> <i class="fa fa-list-ul"></i> </a>
-                                    </li>
                                 </ul>
                             </div>
                         </div>
@@ -55,7 +53,7 @@
                             <div class="tab-content">
                                 <div role="tabpanel" class="tab-pane fade show active" id="grid-view">
                                     <div class="row">
-                                        {%for item in clearance_sale%}
+                                        {%for item in products%}
                                             <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4">
                                                 <div class="products-single fix">
                                                     <div class="box-img-hover">
@@ -117,7 +115,7 @@
                                         </div>
                                     </div>
                                 </div> {% endcomment %}
-                                <a href="{%url 'trending'%}" class="list-group-item list-group-item-action"> Trending  <small class="text-muted">(150) </small></a>
+                                <a href="{%url 'shop'%}" class="list-group-item list-group-item-action"> Trending  <small class="text-muted">(150) </small></a>
                                 <a href="{%url 'newarrival'%}" class="list-group-item list-group-item-action"> New Arrivals<small class="text-muted">(11)</small></a>
                                 <a href="{%url 'clearance'%}" class="list-group-item list-group-item-action"> Clearance<small class="text-muted">(22)</small></a>
                             </div>

@@ -32,8 +32,8 @@ urlpatterns = [
     #----------------------------------------------other urls----------------------------------------
 
     path('admin/', admin.site.urls),
-    path('', Storefront, name='home'),
-    path('contact-us/', Contact, name = 'contact'),
+    path('', Homeview.as_view(), name='home'),
+    path('contact-us/', ContactView.as_view(), name = 'contact'),
     
 
     # ------------------------------------------shop urls-----------------------------------------------------
@@ -72,11 +72,12 @@ urlpatterns = [
 
 
     path('categories/<str:slug>', CategoryTemplateView.as_view(), name='product_category'),
+    path('plussize/<str:slug>', PlusTemplateView.as_view(), name='plussize'),
 
     path('shop/<str:slug>', ProductDetailView.as_view(), name='productdetail'),
 
-    path('trending/', Trending.as_view(), name='trending' ),
-    path('clearancesales/', Clearance.as_view(), name='clearance'),
+    path('clearance/<str:slug>',ClearanceTemplateView.as_view(), name='clearance'),
+    
     path('newarrivals/', NewArrival.as_view(), name='newarrival'),
 
 
