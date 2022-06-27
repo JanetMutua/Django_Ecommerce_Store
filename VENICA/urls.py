@@ -71,9 +71,9 @@ urlpatterns = [
     # path('category', categories, name='category'),
 
 
-    path('categories/<str:slug>', category_view, name='product_category'),
+    path('categories/<str:slug>', CategoryTemplateView.as_view(), name='product_category'),
 
-    # path('categories/<str:slug>/<int:pk>', Product_detail, name='productdetail'),
+    path('shop/<str:slug>', ProductDetailView.as_view(), name='productdetail'),
 
     path('trending/', Trending.as_view(), name='trending' ),
     path('clearancesales/', Clearance.as_view(), name='clearance'),

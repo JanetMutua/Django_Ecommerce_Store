@@ -86,11 +86,11 @@
                                                     <ul>
                                                         <li><a href="{%url 'wishlist'%}" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
                                                     </ul>
-                                                    <a class="cart" href="{%url 'mycart'%}">Add to Cart</a>
+                                                    <a class="cart" href="{%url 'productdetail' item.slug%}">Add to Cart</a>
                                                 </div>
                                             </div>
                                             <div class="why-text">
-                                                <h4>{{item.name}}</h4>
+                                                <h4>{{item.slug}}</h4>
                                                 <h5>Ksh.{{item.selling_price| stringformat:'d'}}</h5>
                                             </div>
                                         </div>
@@ -158,11 +158,11 @@
                                                     <ul>
                                                         <li><a href="{%url 'wishlist'%}" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
                                                     </ul>
-                                                    <a class="cart" href="{%url 'mycart'%}">Add to Cart</a>
+                                                    <a class="cart" href="{%url 'productdetail' item.slug%}">Add to Cart</a>
                                                 </div>
                                             </div>
                                             <div class="why-text">
-                                                <h4>{{item.name}}</h4>
+                                                <h4>{{item.slug}}</h4>
                                                 <h5>Ksh.{{item.selling_price| stringformat:'d'}}</h5>
                                             </div>
                                         </div>   

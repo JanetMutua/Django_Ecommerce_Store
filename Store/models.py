@@ -69,7 +69,7 @@ class Size(models.Model):
 class Product(models.Model):
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     size = models.ForeignKey(Size, on_delete=models.DO_NOTHING, null=True, blank=True)
-    name = models.CharField(max_length=150, null=False, blank=False)
+    slug = models.CharField(max_length=150, null=False, blank=False)
     product_image= models.ImageField(upload_to= get_file_path, height_field=None, width_field=None, max_length = None)
     brief_description = models.CharField(max_length=250, null=False, blank=False)
     quantity = models.IntegerField(null=False, blank=False)

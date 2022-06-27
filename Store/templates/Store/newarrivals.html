@@ -29,24 +29,22 @@
                             <div class="col-12 col-sm-8 text-center text-sm-left">
                                 <div class="toolbar-sorter-right">
                                     <span>Sort by </span>
-                                    <select id="basic" class="selectpicker show-tick form-control" data-placeholder="$ USD">
+                                    <select id="basic" class="selectpicker show-tick form-control" data-placeholder="KES">
 									<option data-display="Select">Nothing</option>
 									<option value="1">Popularity</option>
-									<option value="2">High Price → High Price</option>
+									<option value="2">High Price → Low Price</option>
 									<option value="3">Low Price → High Price</option>
 									<option value="4">Best Selling</option>
 								</select>
                                 </div>
-                                <p>Showing all 4 results</p>
+                                <p>Showing all results</p>
                             </div>
                             <div class="col-12 col-sm-4 text-center text-sm-right">
                                 <ul class="nav nav-tabs ml-auto">
                                     <li>
                                         <a class="nav-link active" href="#grid-view" data-toggle="tab"> <i class="fa fa-th"></i> </a>
                                     </li>
-                                    <li>
-                                        <a class="nav-link" href="#list-view" data-toggle="tab"> <i class="fa fa-list-ul"></i> </a>
-                                    </li>
+                                    
                                 </ul>
                             </div>
                         </div>
@@ -65,7 +63,7 @@
                                                     <img src="{{item.product_image.url}}" class="img-fluid" alt="Image">
                                                     <div class="mask-icon">
                                                         <ul>
-                                                            <li><a href="{%url 'shop'%}" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
+                                                            <li><a href="{%url 'productdetail' item.slug%}" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
                                                             <li><button class= 'btn btn-outline-secondary addToWishlist'><i class="far fa-heart"></i></button></li>
                                                         </ul>
                                                         <a class="cart" href="{%url 'mycart' %}"><button class= 'btn btn-outline-secondary addToCartBtn'>Add to Cart</button></a>
