@@ -73,10 +73,11 @@ urlpatterns = [
 
     path('categories/<str:slug>', CategoryTemplateView.as_view(), name='product_category'),
     path('plussize/<str:slug>', PlusTemplateView.as_view(), name='plussize'),
+    path('petite/<str:slug>', PetiteTemplateView.as_view(), name='petite'),
 
     path('shop/<str:slug>', ProductDetailView.as_view(), name='productdetail'),
 
-    path('clearance/<str:slug>',ClearanceTemplateView.as_view(), name='clearance'),
+    path('clearance/',ClearanceTemplateView.as_view(), name='clearance'),
     
     path('newarrivals/', NewArrival.as_view(), name='newarrival'),
 

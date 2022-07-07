@@ -12,7 +12,11 @@ from django.contrib.auth import authenticate, login, logout
 def register(request):
     form = CustomUserForm()
     if request.method == 'POST':
-        form = CustomUserForm(request.POST)
+        name = request.POST.get('username')
+        passwd1 = request.POST.get('password1')
+       
+        form = authenticate(request, username = name, password = passwd1)
+         
         if form.is_valid():
             form.save()
             messages.success(request, 'Signup was successful.Login to shop')
@@ -20,7 +24,7 @@ def register(request):
 
 
     context= {'form': form}
-    return render(request, 'Store/auth/register.html', context)
+    return render(request, 'Store/auth/register2.html', context)
 
 
 def loginpage(request):
@@ -42,7 +46,7 @@ def loginpage(request):
                 messages.error(request, 'Invalid Username or Password')
                 return redirect('/login')
 
-        return render(request, 'Store/auth/login.html')
+        return render(request, 'Store/auth/login2.html')
 
 def logoutpage(request):
     if request.user.is_authenticated:

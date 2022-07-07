@@ -1,0 +1,90 @@
+{%load static%}
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>VENICA LADY</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="{% static 'auth/css/style.css'%}">
+
+</head>
+
+<body class="img js-fullheight" style="background-image: url(/static/auth/images/img2.jpg);">
+    <section class="ftco-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-6 text-center mb-5">
+                    <h2 class="heading-section">VENICA LADY</h2>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-md-6 col-lg-4">
+                    <div class="login-wrap p-0">
+                        <form action="#" class="signin-form" id="contactForm" method="POST">
+                            {% csrf_token %}
+                            <div class="form-group">
+                                <input name =username type="text" class="form-control" placeholder="Username" required>
+                                
+                                {%if form.errors.username%}
+                                <label class='text-danger'>{{form.errors.username}}</label>
+                                {%endif%}
+                            </div>
+                            <div class="form-group">
+                                <input name =email type="text" class="form-control" placeholder="Email address" required>
+                                {%if form.errors.email%}
+                                <label class='text-danger'>{{form.errors.email}}</label>
+                                {%endif%}
+                            </div>
+                            <div class="form-group">
+                                <input name =password1 id="password-field" type="password" class="form-control" placeholder="Password"
+                                    required>
+                                <span toggle="#password-field"
+                                    class="fa fa-fw fa-eye field-icon toggle-password"></span>
+                                {%if form.errors.password1%}
+                                <label class='text-danger'>{{form.errors.password1}}</label>
+                                {%endif%}
+                            </div>
+                            <div class="form-group">
+                                <input  name =password2 id="password-field" type="password" class="form-control"
+                                    placeholder="Confirm Password" required>
+                                <span toggle="#password-field"
+                                    class="fa fa-fw fa-eye field-icon toggle-password"></span>
+                                {%if form.errors.password2%}
+                                <label class='text-danger'>{{form.errors.password2}}</label>
+                                {%endif%}
+                            </div>
+                            <div class="form-group">
+                                <button id="submit" type="submit" class="form-control btn btn-primary submit px-3">Register</button>
+                                <div id="msgSubmit" class="h3 text-center hidden"></div>
+                            </div>
+                            <!-- <p class="w-100 text-size text-center">&mdash;Or Sign Up With&mdash;</p>
+                            <div class="social d-flex text-center">
+                                <a href="#" class="px-2 py-2 mr-md-1 rounded"><span class="ion-logo-twitter mr-2"></span>
+                                    Google</a>
+                                <a href="#" class="px-2 py-2 ml-md-1 rounded"><span class="ion-logo-facebook mr-2"></span>
+                                    Facebook</a>
+                            </div> -->
+                            <p class="w-100 text-center">&mdash; <a href="{%url 'loginpage'%" style="color: #fff">Sign In To
+                                    Your Account</a>&mdash;</p>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="{% static 'auth/js/jquery.min.js'%}"></script>
+    <script src="{% static 'auth/js/popper.js'%}"></script>
+    <script src="{% static 'auth/js/bootstrap.min.js'%}"></script>
+    <script src="{% static 'auth/js/main.js'%}"></script>
+
+</body>
+
+</html>

@@ -161,26 +161,31 @@ class CategoryTemplateView(ListView):
     
 
 
-
 class ClearanceTemplateView(ListView):
     model = Product
     template_name = 'Store/clearance.html'
+    queryset = Product.objects.filter(clearance_sale = 1)
+
+    
+# class ClearanceTemplateView(ListView):
+#     model = Product
+#     template_name = 'Store/clearance.html'
         
 
-    def get_context_data(self, **kwargs):
-        if (Product.objects.filter(clearance_sale=1)):
-            products = Product.objects.filter(category__slug__icontains = self.kwargs.get('slug'))
-            category_name = Category.objects.filter(slug__icontains=self.kwargs.get('slug'))
+#     def get_context_data(self, **kwargs):
+#         if (Product.objects.filter(clearance_sale=1)):
+#             products = Product.objects.filter(category__slug__icontains = self.kwargs.get('slug'))
+#             category_name = Category.objects.filter(slug__icontains=self.kwargs.get('slug'))
 
-            cat_menu = Category.objects.all()
-            new = Product.objects.filter(new_arrival = 1)
-            plussize = Category.objects.filter(PlusSize = 1)
-            clearance = Category.objects.filter(Clearance= 1)
-            petite = Category.objects.filter(Petite = 1)
+#             cat_menu = Category.objects.all()
+#             new = Product.objects.filter(new_arrival = 1)
+#             plussize = Category.objects.filter(PlusSize = 1)
+#             clearance = Category.objects.filter(Clearance= 1)
+#             petite = Category.objects.filter(Petite = 1)
 
-            context =  super(ClearanceTemplateView, self).get_context_data(**kwargs)
-            context = {'products': products, 'category_name':category_name, 'cat_menu': cat_menu, 'new': new, 'plussize':plussize, 'petite':petite, 'clearance': clearance}
-            return context
+#             context =  super(ClearanceTemplateView, self).get_context_data(**kwargs)
+#             context = {'products': products, 'category_name':category_name, 'cat_menu': cat_menu, 'new': new, 'plussize':plussize, 'petite':petite, 'clearance': clearance}
+#             return context
 
 
 class PlusTemplateView(ListView):
@@ -189,7 +194,7 @@ class PlusTemplateView(ListView):
         
 
     def get_context_data(self, **kwargs):
-        products = Product.objects.filter(size__size_category__slug__icontains = self.kwargs.get('slug'))
+        products = Product.objects.filter(size__PlusSize = 1, category__slug__icontains = self.kwargs.get('slug'))
         category_name = Category.objects.filter(PlusSize = 1)
 
         cat_menu = Category.objects.all()
@@ -201,6 +206,27 @@ class PlusTemplateView(ListView):
         context =  super(PlusTemplateView, self).get_context_data(**kwargs)
         context = {'products': products, 'category_name':category_name, 'cat_menu': cat_menu, 'new': new, 'plussize':plussize, 'petite':petite, 'clearance': clearance}
         return context
+
+
+class PetiteTemplateView(ListView):
+    model = Product
+    template_name = 'Store/product_category.html'
+        
+
+    def get_context_data(self, **kwargs):
+        products = Product.objects.filter(size__petite = 1, category__slug__icontains = self.kwargs.get('slug'))
+        category_name = Category.objects.filter(Petite = 1)
+
+        cat_menu = Category.objects.all()
+        new = Product.objects.filter(new_arrival = 1)
+        plussize = Category.objects.filter(PlusSize = 1)
+        clearance = Category.objects.filter(Clearance= 1)
+        petite = Category.objects.filter(Petite = 1)
+
+        context =  super(PetiteTemplateView, self).get_context_data(**kwargs)
+        context = {'products': products, 'category_name':category_name, 'cat_menu': cat_menu, 'new': new, 'plussize':plussize, 'petite':petite, 'clearance': clearance}
+        return context
+
 
 
 #---------------------------------------------------size views-----------------------------------------

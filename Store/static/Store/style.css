@@ -985,12 +985,12 @@
      padding-bottom: 15px;
 }
  .why-text h5{
-     font-size: 18px;
+     font-size: 12px;
      font-family: 'Poppins', sans-serif;
      padding: 4px;
 	 display: inline-block;
-	 background: #000000;
-	 color: #ffffff;
+	 background: #f5f5f5;
+	 color: #000000;
      font-weight: 600;
 }
  .mask-icon{

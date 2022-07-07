@@ -8,7 +8,9 @@ from Store.models import Product, Cart
 
 
 
-@login_required(login_url='loginpage')
+# @login_required(login_url='loginpage')
+
+
 def index_cart(request):
     cart = Cart.objects.filter(user = request.user)
     context = {'cart': cart}
@@ -23,17 +25,14 @@ def myCart(request):
                 if(Cart.objects.filter(user=request.user.id, product_id = prod_id)):
                     return JsonResponse({'status': "Already In Cart"})
                 else:
-
-                    Cart.objects.create(user=request.user, product_id = prod_id)
-                    return JsonResponse({'status':"Added to cart"})
-                    # prod_qty = int(request.POST.get('product_qty'))
-                    # if product_check.quantity >= prod_qty:
-                    #     Cart.objects.create(user = request.user, product_id  = prod_id, product_qty = prod_qty)
-                    #     return JsonResponse({'status': "Product added to cart"})
-                    # else:
-                    #     return JsonResponse({'status': "Only "+ str(product_check.quantity)+ "available"})
+                    prod_qty = int(request.POST.get('product_qty'))
+                    if product_check.quantity >= prod_qty:
+                        Cart.objects.create(user = request.user, product_id  = prod_id, product_qty = prod_qty)
+                        return JsonResponse({'status': "Product added successfully"})
+                    else:
+                        return JsonResponse({'status': "Only "+ str(product_check.quantity)+ "available"})
             else:
-                return JsonResponse({'status': "No such Product"})
+                return JsonResponse({'status': "Something went wrong"})
 
         else:
             return JsonResponse({'status': "Login to Continue"})
