@@ -26,9 +26,7 @@ def get_file_path(request, filename):
 class Category(models.Model):
     slug = models.CharField(max_length=150, null=False, blank=False)
     name = models.CharField(max_length=150, null=False, blank=False)
-    image= models.ImageField(upload_to=get_file_path, height_field=None, width_field=None, max_length = None)
     description = models.TextField(max_length=500, name=False, blank=False)
-    status = models.BooleanField(default=False, help_text='0=default, 1=Hidden')
     created_at = models.DateTimeField(auto_now_add=True)
     PlusSize = models.BooleanField(default=False, help_text='0=default, 1=PlusSize')
     Clearance = models.BooleanField(default=False, help_text='0=default, 1=Clearance')
@@ -46,22 +44,20 @@ class Category(models.Model):
 class Size(models.Model):
     size_no = models.IntegerField(null=False, blank=False)
     description = models.CharField(max_length=30, null=False, blank=False)
-    status = models.BooleanField(default=False, help_text='0=default, 1=Hidden')
     petite = models.BooleanField(default=False, help_text='0=default, 1=Petite')
     PlusSize = models.BooleanField(default=False, help_text='0=default, 1=PlusSize')
-    
-
 
     def __str__(self):
         return str(self.size_no)
+
 
 
 class Product(models.Model):
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     size = models.ForeignKey(Size, on_delete=models.DO_NOTHING, null=True, blank=True)
     name = models.CharField(max_length=150, null=False, blank=False)
+    slug = models.CharField(default=None, max_length=150, null=True, blank=True)
     product_image= models.ImageField(upload_to= get_file_path, height_field=None, width_field=None, max_length = None)
-    brief_description = models.CharField(max_length=250, null=False, blank=False)
     quantity = models.IntegerField(null=False, blank=False)
     description = models.TextField(max_length=500, name=False, blank=True)
     buying_price = models.FloatField(null=False, blank=False)

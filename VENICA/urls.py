@@ -77,7 +77,7 @@ urlpatterns = [
 
     path('shop/<str:slug>', ProductDetailView.as_view(), name='productdetail'),
 
-    path('clearance/',ClearanceTemplateView.as_view(), name='clearance'),
+    path('clearance/<str:slug>',ClearanceTemplateView.as_view(), name='clearance'),
     
     path('newarrivals/', NewArrival.as_view(), name='newarrival'),
 

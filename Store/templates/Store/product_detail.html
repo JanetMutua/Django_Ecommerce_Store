@@ -12,7 +12,7 @@
                     <h2>Product Detail</h2>
                     <ul class="breadcrumb">
                         <li class="breadcrumb-item"><a href="{%url 'shop'%}">Shop/</a></li>
-                        <li class="breadcrumb-item active"><a href="#">{{products.slug}}</a></li>
+                        <li class="breadcrumb-item active"><a href="#">{{products.name}}</a></li>
                     </ul>
                 </div>
             </div>
@@ -66,12 +66,16 @@
 								<div class="form-group quantity-box">
                                     {%csrf_token%}
                                     <input type="hidden" value="{{item.id}}" , class="prod_id">
-									<label class="control-label">Quantity</label>
-                                    <div class="input-group text-center mb-3" style="width:138px;">
-                                        <button class='input-group-text decrement-btn'>-</button>
-                                        <input class="form-control qty-input text-center" name='quantity' value="1" type="text">
-                                        <button class='input-group-text increment-btn'>+</button>
+
+                                    
+                                    <div class="form-group quantity-box">
+                                        <label class="control-label">Quantity</label>
+                                        <input class="form-control" value="0" min="0" max="20" type="number">
                                     </div>
+                                        <!-- <button class='input-group-text decrement-btn'>-</button>
+                                        <input class="form-control qty-input text-center" name='quantity' value="1" type="text">
+                                        <button class='input-group-text increment-btn'>+</button> -->
+                                    
 								</div>
 							</li>
 						</ul>

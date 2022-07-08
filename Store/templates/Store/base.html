@@ -130,7 +130,7 @@
                             <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">Clearance</a>
                             <ul class="dropdown-menu">
                                 {%for item in clearance%}
-                                <li><a href="{%url 'clearance'%}">Clearance-{{item.name}}</a></li>
+                                <li><a href="{%url 'clearance' item.slug%}">Clearance-{{item.name}}</a></li>
                                 {%endfor%}
                             </ul>
                         </li>
